@@ -1,24 +1,34 @@
-# README
+#ミニテラ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+植物の水やりリマインドアプリケーション
 
-Things you may want to cover:
+### サイトテーマ
+観葉植物の種類に応じた水やり日数をリマインド
 
-* Ruby version
+### テーマを選んだ理由
+手軽に始められる趣味や部屋のインテリアとして観葉植物が人気ですが、育成の知識が無いと植物を枯らしてしまうことも少なく無いでしょう。
+実際に私も観葉植物を育てていましたが、水のやりすぎで枯らしてしまった経験があります。
+知識がなくても育成のガイドとなるアプリがあれば育てやすいと思いこのテーマにしました。
 
-* System dependencies
 
-* Configuration
+### ターゲットユーザ
+植物育成をしている人。
+育成知識があまりない人。
 
-* Database creation
+### 主な利用シーン
+前回の水やりを忘れてしまった時。
+水やりの頻度がわからない時。
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1kCRW2OeS7ySQegIg09vb770Mjza98gOG9-BiSi5G6H0/edit?usp=sharing
 
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
