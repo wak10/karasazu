@@ -6,7 +6,6 @@ class CreatePlants < ActiveRecord::Migration[5.2]
       t.integer :frequency
       t.string :amount
       t.string :advice
-
       t.timestamps
     end
   end
