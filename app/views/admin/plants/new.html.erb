@@ -1,0 +1,14 @@
+<h2>植物情報追加</h2>
+<%= form_with model: @plant, url: admin_plants_path, local:true do |f| %>
+	<%= attachment_image_tag @plant, :image, :fill, 300, 300 , fallback: "karasazu_logo.jpg" %>
+  <%= f.attachment_field :image %>
+	<%= f.label :plant_name, "植物名:" %>
+	<%= f.text_field :plant_name %>
+	<p><%= f.label :frequency, "水やり頻度:" %>
+	<%= f.text_field :frequency %>日ごと</p>
+	<%= f.label :amount, "水量:" %>
+	<%= f.text_field :amount %>
+	<%= f.label :advice, "育成アドバイス:" %>
+	<%= f.text_area :advice %>
+	<%= f.submit '登録する' %>
+<% end %>
