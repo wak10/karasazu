@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MiniTera</title>
+    <title>karasazu</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <header>
+      <% if admin_signed_in? %>
+        <%=link_to admin_plants_path do %>
+          <%= image_tag 'logo_top.jpg'%>
+        <% end %>
+        <ul>
+          <li>
+            <p>admin</p>
+          </li>
+          <li>
+            <%= link_to "ログアウト", destroy_admin_session_path %>
+          </li>
+        </ul>
+      <% elsif user_signed_in? %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
