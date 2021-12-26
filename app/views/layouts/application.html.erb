@@ -12,21 +12,47 @@
 
   <body>
     <header>
-      <% if admin_signed_in? %>
+      <% if user_signed_in? %>
+      <div>
+        <%=link_to grow_plants_path do %>
+          <%= image_tag 'logo_top.jpg'%>
+        <% end %>
+      </div>
+
+    <%= attachment_image_tag @user, :image, :fill, size:"50x50", fallback: "icon.jpeg" %>
+    <table>
+        <ul>
+          <li><span>ユーザー名:</span><%= current_user.name %></li>
+          <li>
+            <%= link_to "マイページ", users_path %>
+          </li>
+          <li>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+      <% elsif admin_signed_in? %>
         <%=link_to admin_plants_path do %>
           <%= image_tag 'logo_top.jpg'%>
         <% end %>
         <ul>
+          <li><%= Admin.name %></li>
           <li>
-            <p>admin</p>
-          </li>
-          <li>
-            <%= link_to "ログアウト", destroy_admin_session_path %>
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
           </li>
         </ul>
-      <% elsif user_signed_in? %>
+      <% else %>
+        <%=link_to root_path do %>
+          <%= image_tag 'logo_top.jpg'%>
+        <% end %>
+        <ul>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+        </ul>
       <% end %>
     </header>
-    <%= yield %>
+    <main>
+      <%= notice %>
+      <%= yield %>
+    </main>
   </body>
 </html>

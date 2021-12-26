@@ -1,0 +1,14 @@
+<h2>マイページ</h2>
+    	<%= attachment_image_tag @user, :image, :fill, 300, 300 , fallback: "icon.jpeg" %>
+    <table>
+     <tr>
+       <td>ユーザー名</td>
+       <td><%= @user.name %></td>
+     </tr>
+     <tr>
+       <td>メールアドレス</td>
+       <td><%= @user.email %></td>
+     </tr>
+    </table>
+
+  <%= link_to "編集画面へ", edit_users_path %>
