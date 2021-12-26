@@ -14,12 +14,11 @@
     <header>
       <% if user_signed_in? %>
       <div>
-        <%=link_to grow_plants_path do %>
+        <%=link_to top_path do %>
           <%= image_tag 'logo_top.jpg'%>
         <% end %>
       </div>
 
-    <%= attachment_image_tag @user, :image, :fill, size:"50x50", fallback: "icon.jpeg" %>
     <table>
         <ul>
           <li><span>ユーザー名:</span><%= current_user.name %></li>

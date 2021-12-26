@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
     when User
-      grow_plants_path
+      top_path
     when Admin
       admin_plants_path
     end
