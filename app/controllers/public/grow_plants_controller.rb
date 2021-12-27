@@ -6,6 +6,7 @@ class Public::GrowPlantsController < ApplicationController
 
   def pick
     @plant = Plant.find(params[:id])
+    @grow_plant = GrowPlant.new
   end
 
   def show
@@ -15,7 +16,7 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def create
-    @grow_plant = current_user.grow_plant.new(grow_plant_params)
+    @grow_plant = current_user.grow_plants.new(grow_plant_params)
     @grow_plant.save
     redirect_to  top_path
   end
@@ -32,7 +33,7 @@ class Public::GrowPlantsController < ApplicationController
     params.require(:plant).permit( :plant_name, :image, :frequency, :amount, :advice)
   end
 
-  def grow_plant_paramas
+  def grow_plant_params
     params.require(:grow_plant).permit( :plant_id, :user_id, :nick_name)
   end
 

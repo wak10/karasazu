@@ -7,6 +7,6 @@
   <% @grow_plants.each do |grow_plant| %>
     <%= link_to grow_plant_path(grow_plant) do %>
       <%= attachment_image_tag grow_plant.plant, :image, :fill, 200, 200 %>
-      <%= grow.plant.plant_name %>
+      <%= grow_plant.nick_name %>
     <% end %>
   <% end %>
