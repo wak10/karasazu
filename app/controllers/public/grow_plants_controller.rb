@@ -32,4 +32,8 @@ class Public::GrowPlantsController < ApplicationController
     params.require(:plant).permit( :plant_name, :image, :frequency, :amount, :advice)
   end
 
+  def grow_plant_paramas
+    params.require(:grow_plant).permit( :plant_id, :user_id, :nick_name)
+  end
+
 end
