@@ -10,6 +10,7 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def show
+    @grow_plant = GrowPlant.find(params[:id])
   end
 
   def complete
