@@ -1,8 +1,32 @@
+  <h2>育成植物詳細</h2>
   <%= attachment_image_tag @grow_plant.plant, :image, :fill, 200, 200 %></br >
-  <%= @grow_plant.plant.plant_name %></br >
-  <%= @grow_plant.nick_name %></br >
-  <%= @grow_plant.plant.amount %></br >
-  <%= @grow_plant.plant.advice %></br >
+  <table>
+    <tr>
+      <td>植物名</td>
+      <td><%= @grow_plant.plant.plant_name %></td>
+    </tr>
+    <tr>
+      <td>愛称</td>
+      <td><%= @grow_plant.nick_name %></td>
+    </tr>
+    <tr>
+      <td>水やり水量</td>
+      <td><%= @grow_plant.plant.amount %></td>
+    </tr>
+    <tr>
+      <td>育成アドバイス</td>
+      <td><%= @grow_plant.plant.advice %></td>
+    </tr>
+    <tr>
+      <td>育成開始日</td>
+      <td><%= l @grow_plant.created_at %></td>
+    </tr>
+  </table>
 
+  <%= form_with model: @log, url: complete_path, local: true do |f| %>
+    <%= f.hidden_field :grow_plant_id, value: @grow_plant.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit "水やり完了!" %>
+  <% end %>
 
-  <%= l @grow_plant.created_at %>
+  <%= link_to "枯れてしまった...", grow_plant_path(@grow_plant), method: :delete, class: "btn btn-danger" %>

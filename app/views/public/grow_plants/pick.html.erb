@@ -2,7 +2,7 @@
   <%= attachment_image_tag @plant, :image, :fill, 200, 200 %>
   <%= @plant.plant_name %>
 
-  <%= form_with model: @grow_plant, url: grow_plants_path, local:true do |f| %>
+  <%= form_with model: @grow_plant, url: grow_plants_path, local: true do |f| %>
     <%= f.hidden_field :plant_id, value: @plant.id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.label :nick_name, "愛称:" %>
