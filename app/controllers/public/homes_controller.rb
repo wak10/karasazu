@@ -1,8 +1,7 @@
 class Public::HomesController < ApplicationController
 
   def top
-    @plants = Plant.all
-    @grow_plants = GrowPlant.all
+    @grow_plants = current_user.grow_plants
   end
 
   def about

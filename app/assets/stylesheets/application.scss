@@ -26,10 +26,12 @@
   font-family: Senobi-Gothic-Bold;
 }
 
-.link {
-    text-decoration: none;
-    color: black ;
+.image {
+  border-radius: 50%;
+  border: solid;
+  border: 2px solid gray;
 }
+
 header {
   width: 100vw;
   background-color: #EFECE5;
@@ -53,19 +55,24 @@ header {
       }
       li {
         list-style: none;
+        margin-left: 30px;
         a {
           display: block;
           width: 110px;
-          padding: 10px 15px;
+          padding: 8px 10px;
           text-align: center;
           text-decoration: none;
           color: #333;
+          border:solid 1px;
+          border-radius: 6px;
         }
       }
       li:hover {
-        background-color: #C0C0C0;
+        color: #C0C0C0;
         a {
-          color: #fff;
+          background-color:  #2E8B57;
+          color: white;
+          border-radius: 6px;
         }
       }
 
