@@ -4,54 +4,54 @@
     <title>karasazu</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/c4cc096aed.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
-
   <body>
-    <header>
-      <% if user_signed_in? %>
-      <div>
+    <header class="shadow">
+    <% if user_signed_in? %>
+      <div class="header-content">
         <%=link_to top_path do %>
-          <%= image_tag 'logo_top.jpg'%>
+          <%= image_tag 'logo_top.png'%>
         <% end %>
       </div>
-
-    <table>
+      <div class="header-content">
         <ul>
-          <li><span>ユーザー名:</span><%= current_user.name %></li>
-          <li>
-            <%= link_to "マイページ", users_path %>
-          </li>
-          <li>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          </li>
+          <p>ユーザー名:<%= current_user.name %></p>
+          <li><%= link_to "マイページ", users_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         </ul>
-    </table>
-      <% elsif admin_signed_in? %>
+      </div>
+    <% elsif admin_signed_in? %>
+      <div class="header-content">
         <%=link_to admin_plants_path do %>
-          <%= image_tag 'logo_top.jpg'%>
+          <%= image_tag 'logo_top.png'%>
         <% end %>
+      </div>
+      <div class="header-content">
         <ul>
-          <li><%= Admin.name %></li>
-          <li>
-            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-          </li>
+          <p>管理者ログイン中</p>
+          <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
         </ul>
-      <% else %>
+      </div>
+    <% else %>
+      <div class="header-content">
         <%=link_to root_path do %>
-          <%= image_tag 'logo_top.jpg'%>
+          <%= image_tag 'logo_top.png'%>
         <% end %>
+      </div>
+      <div class="header-content">
         <ul>
           <li><%= link_to "ログイン", new_user_session_path %></li>
           <li><%= link_to "新規登録", new_user_registration_path %></li>
         </ul>
-      <% end %>
+      </div>
+    <% end %>
     </header>
     <main>
-      <%= notice %>
       <%= yield %>
     </main>
   </body>

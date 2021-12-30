@@ -1,3 +1,23 @@
-<h1>about画面</h1>
-<%= link_to "ログイン", new_user_session_path %>
-<%= link_to "新規登録", new_user_registration_path %>
+<div class="container">
+  <div class="d-flex align-items-center">
+  <%= image_tag 'karasazu_logo.jpg'%>
+  <div class="align-items-center justify-content-center ml-5">
+    <h1>カラサズとは</h1>
+    <h5>
+      植物の水やりリマインドするアプリケーションです。</br>
+      事前に管理者が植物の種類ごとに水やりの頻度と量、適正環境と育成のアドバイスを登録します。</br>
+      ユーザーは育成している植物名を選択するだけで、最適な水やり日を通知で受け取ることができます。</br>
+      植物ごとの詳細画面で水やりログのカレンダー･次回水やり予定日･水量･適正環境･育成アドバイスを確認できます。</br>
+    </h5>
+  </div>
+  </div>
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <button type="button" class="btn btn-outline-primary m-4">
+    <%= link_to "ログイン", new_user_session_path, class:"link" %>
+    </button>
+
+    <button type="button" class="btn btn-outline-success m-4">
+      <%= link_to "新規登録", new_user_registration_path, class:"link" %>
+    </button>
+  </div>
+</div>

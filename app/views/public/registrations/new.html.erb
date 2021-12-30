@@ -1,31 +1,30 @@
-<h2>新規登録</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :name, "ユーザー名" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="mr-5"><%= image_tag 'karasazu_logo.jpg'%></div>
+    <div class="align-items-center justify-content-center ml-5">
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <h2>新規登録</h2>
+      <div class="field">
+        <%= f.label :name, "ユーザー名" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field">
+        <%= f.label :password, "パスワード" %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %>文字以上)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, "パスワード(確認)" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      <div class="actions mt-3">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %>文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "パスワード(確認)" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-

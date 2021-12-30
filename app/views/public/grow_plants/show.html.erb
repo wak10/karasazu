@@ -18,6 +18,14 @@
       <td><%= @grow_plant.plant.advice %></td>
     </tr>
     <tr>
+      <td>前回水やり日</td>
+      <td><%= @last_log.created_at %></td>
+    </tr>
+    <tr>
+      <td>次回水やり日</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>育成開始日</td>
       <td><%= l @grow_plant.created_at %></td>
     </tr>

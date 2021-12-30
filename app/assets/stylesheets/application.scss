@@ -13,6 +13,61 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+@import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+@font-face{
+  font-family:  'Senobi-Gothic-Bold';
+  src: font-url('assets/Senobi-Gothic-Bold.ttf');
+}
+
+*{
+  font-family: Senobi-Gothic-Bold;
+}
+
+.link {
+    text-decoration: none;
+    color: black ;
+}
+header {
+  width: 100vw;
+  background-color: #EFECE5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  }
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      margin: auto;
+      p {
+        padding: 10px;
+        margin: 0 auto;
+      }
+      li {
+        list-style: none;
+        a {
+          display: block;
+          width: 110px;
+          padding: 10px 15px;
+          text-align: center;
+          text-decoration: none;
+          color: #333;
+        }
+      }
+      li:hover {
+        background-color: #C0C0C0;
+        a {
+          color: #fff;
+        }
+      }
+
+    }
+  }
