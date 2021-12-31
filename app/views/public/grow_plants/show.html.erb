@@ -1,9 +1,8 @@
-
     <div class="d-flex align-items-center justify-content-center flex-wrap">
-      <div class="mr-5"><%= attachment_image_tag @grow_plant.plant, :image, :fill, 200, 200 %></div>
-      <div class="align-items-center justify-content-center ml-5">
+      <div class="m-2"><%= attachment_image_tag @grow_plant.plant, :image, :fill, 200, 200 %></div>
+      <div class="align-items-center justify-content-center">
         <h2>育成植物詳細</h2>
-        <table class="table table-border mw-75">
+        <table class="table table-border">
           <tr>
             <td>植物名</td>
             <td><%= @grow_plant.plant.plant_name %></td>

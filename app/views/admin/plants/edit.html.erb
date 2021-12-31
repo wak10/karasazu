@@ -1,14 +1,33 @@
-<h2>植物情報編集</h2>
 <%= form_with model: @plant, url: admin_plant_path,method: :patch, local:true do |f| %>
- 	<%= attachment_image_tag @plant, :image, :fill, 300, 300, fallback: "karasazu_logo.jpg" %>
- 	<%= f.attachment_field :image %>
-	<%= f.label :plant_name, "植物名:" %>
-	<%= f.text_field :plant_name %>
-	<p><%= f.label :frequency, "水やり頻度:" %>
-	<%= f.text_field :frequency %>日ごと</p>
-	<%= f.label :amount, "水量:" %>
-	<%= f.text_field :amount %>
-	<%= f.label :advice, "育成アドバイス:" %>
-	<%= f.text_area :advice %>
-	<%= f.submit '更新する' %>
+	<div class="d-flex align-items-center justify-content-center flex-wrap">
+    <div class="m-2">
+  	  <%= attachment_image_tag @plant, :image, :fill, 200, 200, fallback: "karasazu_logo.jpg" %></br >
+ 	  	<%= f.attachment_field :image %>
+    </div>
+ 		<div class="align-items-center justify-content-center">
+			<h2>植物情報編集</h2>
+      <table class="table table-border">
+        <tr>
+          <td><%= f.label :plant_name, "植物名" %></td>
+          <td><%= f.text_field :plant_name %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :frequency, "水やり頻度" %></td>
+          <td><%= f.text_field :frequency %>日ごと</td>
+        </tr>
+        <tr>
+          <td><%= f.label :amount, "水量" %></td>
+          <td><%= f.text_field :amount %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :advice, "育成アドバイス:" %></td>
+          <td><%= f.text_area :advice %></td>
+        </tr>
+        <tr>
+          <td><%= f.submit '更新する', class: "btn btn-outline-primary" %></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 <% end %>

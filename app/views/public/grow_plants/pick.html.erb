@@ -1,13 +1,26 @@
-<h2>育成植物選択</h2>
-  <%= attachment_image_tag @plant, :image, :fill, 200, 200 %>
-  <%= @plant.plant_name %>
+<div class="d-flex align-items-center justify-content-center flex-wrap">
+  <div class="m-2"><%= attachment_image_tag @plant, :image, :fill, 200, 200 %></div>
+  <div class="align-items-center justify-content-center">
+    <h2>育成植物選択</h2>
+    <table class="table table-border">
+      <tr>
+        <td>植物名</td>
+        <td><%= @plant.plant_name %></td>
+      </tr>
 
-  <%= form_with model: @grow_plant, url: grow_plants_path, local: true do |f| %>
-    <%= f.hidden_field :plant_id, value: @plant.id %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.label :nick_name, "愛称:" %>
-    <%= f.text_field :nick_name %>
-    <%= f.submit "育成中へ登録する" %>
-  <% end %>
+      <%= form_with model: @grow_plant, url: grow_plants_path, local: true do |f| %>
+      <tr>
+        <td><%= f.label :nick_name, "愛称" %></td>
+        <td><%= f.text_field :nick_name %></td>
+        <%= f.hidden_field :plant_id, value: @plant.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+      </tr>
+      <tr>
+        <td><%= f.submit "育成中へ登録する", class: "btn btn-outline-primary" %></td>
+        <td></td>
+      </tr>
+      <% end %>
 
-  <%= link_to "戻る", grow_plants_path %>
+    </table>
+  </div>
+</div>
