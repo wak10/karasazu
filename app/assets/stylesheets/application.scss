@@ -26,27 +26,17 @@
   font-family: Senobi-Gothic-Bold;
 }
 
-.image {
-  border-radius: 50%;
-  border: solid;
-  border: 2px solid gray;
-}
-
-.nowrap {
-     white-space: nowrap;
-}
-
 table, th, td {
   width: auto !important;
 }
 
 header {
   width: 100vw;
-  background-color: #bdb76b;
+  background-color: #8fbc8f;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  border-bottom: 1px solid gray;
   }
   .header-content {
     display: flex;
@@ -79,10 +69,36 @@ header {
         color: #C0C0C0;
         a {
           background-color:  white;
-          color: #bdb76b;
+          color: #8fbc8f;
           border-radius: 6px;
         }
       }
 
     }
   }
+
+.image {
+  border-radius: 50%;
+  border: solid;
+  border: 2px solid gray;
+  margin: 20px 0;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.above {
+  background-color: #bdbd8f;
+  padding: 15px 0;
+}
+
+.side {
+  background-color: #bdbd8f;
+  padding: 15px 0;
+  height: 85vh;
+}
+
+.room {
+  width: 100%;
+}
