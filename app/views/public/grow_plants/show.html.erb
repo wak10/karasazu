@@ -16,21 +16,23 @@
             <td><%= @grow_plant.plant.amount %></td>
           </tr>
           <tr>
-            <td>日当り</td>
+            <td>育成環境</td>
             <td><%= @grow_plant.place %></td>
           </tr>
           <tr>
             <td class="nowrap">育成アドバイス</td>
             <td><%= @grow_plant.plant.advice %></td>
           </tr>
+        <% @grow_plant.logs.last(1).each do |logs| %>
           <tr>
             <td>前回水やり日</td>
-            <td><%#= @last_log %></td>
+            <td><%= l logs.created_at %></td>
           </tr>
           <tr>
             <td>次回水やり日</td>
-            <td></td>
+            <td><%= l logs.created_at + @frequency.days %></td>
           </tr>
+        <% end %>
           <tr>
             <td>育成開始日</td>
             <td><%= l @grow_plant.created_at %></td>

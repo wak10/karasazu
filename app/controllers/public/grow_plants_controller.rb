@@ -18,8 +18,7 @@ class Public::GrowPlantsController < ApplicationController
   def show
     @grow_plant = GrowPlant.find(params[:id])
     @log = Log.new
-    @last_log = @grow_plant.logs
-
+    @frequency = @grow_plant.plant.frequency
   end
 
   def complete

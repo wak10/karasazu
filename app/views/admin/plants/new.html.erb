@@ -1,5 +1,5 @@
 <%= form_with model: @plant, url: admin_plants_path, local:true do |f| %>
-	<div class="d-flex align-items-center justify-content-center flex-wrap">
+	<div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
   	<div class="m-2">
   		<div><%= attachment_image_tag @plant, :image, :fill, 300, 300 , fallback: "karasazu_logo.jpg" %></div>
   		<div><%= f.attachment_field :image %></div>
