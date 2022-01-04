@@ -89,16 +89,19 @@ header {
 }
 
 .above {
-  background-color: #bdbd8f;
   padding: 15px 0;
 }
 
 .side {
-  background-color: #bdbd8f;
   padding: 15px 0;
-  height: 85vh;
+  height: 80vh;
+}
+.around{
+  background-color: #bdbd8f;
+  margin: 0;
 }
 
 .room {
-  width: 100%;
+  width: 90%;
+  margin: 0 5%;
 }

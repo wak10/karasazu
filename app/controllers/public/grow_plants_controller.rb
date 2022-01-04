@@ -44,7 +44,7 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def grow_plant_params
-    params.require(:grow_plant).permit( :plant_id, :user_id, :nick_name)
+    params.require(:grow_plant).permit( :plant_id, :user_id, :nick_name, :place)
   end
 
   def log_params

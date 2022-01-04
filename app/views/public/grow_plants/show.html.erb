@@ -1,6 +1,6 @@
-    <div class="d-flex align-items-center justify-content-center flex-wrap">
+    <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
       <div class="m-2"><%= attachment_image_tag @grow_plant.plant, :image, :fill, 200, 200 %></div>
-      <div class="align-items-center justify-content-center">
+      <div class="align-items-center justify-content-center ml-5">
         <h2>育成植物詳細</h2>
         <table class="table table-border">
           <tr>
@@ -16,12 +16,16 @@
             <td><%= @grow_plant.plant.amount %></td>
           </tr>
           <tr>
+            <td>日当り</td>
+            <td><%= @grow_plant.place %></td>
+          </tr>
+          <tr>
             <td class="nowrap">育成アドバイス</td>
             <td><%= @grow_plant.plant.advice %></td>
           </tr>
           <tr>
             <td>前回水やり日</td>
-            <td><%= @last_log %></td>
+            <td><%#= @last_log %></td>
           </tr>
           <tr>
             <td>次回水やり日</td>

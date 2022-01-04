@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_12_25_103252) do
     t.integer "plant_id"
     t.integer "user_id"
     t.string "nick_name"
+    t.integer "place", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
