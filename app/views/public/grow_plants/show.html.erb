@@ -23,14 +23,14 @@
             <td class="nowrap">育成アドバイス</td>
             <td><%= @grow_plant.plant.advice %></td>
           </tr>
-        <% @grow_plant.logs.last(1).each do |logs| %>
+        <% @grow_plant.logs.last(1).each do |last_log| %>
           <tr>
             <td>前回水やり日</td>
-            <td><%= l logs.created_at %></td>
+            <td><%= l last_log.created_at %></td>
           </tr>
           <tr>
             <td>次回水やり日</td>
-            <td><%= l logs.created_at + @frequency.days %></td>
+            <td><%= l last_log.created_at + @frequency.days %></td>
           </tr>
         <% end %>
           <tr>

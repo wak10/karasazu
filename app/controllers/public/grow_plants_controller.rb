@@ -1,7 +1,23 @@
 class Public::GrowPlantsController < ApplicationController
 
   def index
-    @plants = Plant.all
+    @grow_plants = GrowPlant.all
+    @grow_plants.find_each do |grow_plant|
+      @frequency = grow_plant.plant.frequency
+      grow_plant.logs.last(1).each do |last_log|
+        @next_log = last_log.created_at.to_date + @frequency.days
+        @today = Date.todaygit
+        if @next_log <= @today
+          p "send_mail"
+        elsif
+          p "false"
+        end
+
+        # redirect_to top_path and return
+
+      end
+    end
+
   end
 
   def pick
@@ -47,7 +63,7 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def log_params
-    params.require(:log).permit( :grow_plant_id, :user_id, :create_at)
+    params.require(:log).permit( :grow_plant_id, :user_id, :created_at)
   end
 
 end
