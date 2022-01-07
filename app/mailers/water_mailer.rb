@@ -1,6 +1,6 @@
 class WaterMailer < ApplicationMailer
 
-  def send_mail
+  def send_mail(grow_plant)
     @email = @grow_plant.user.email
 
     mail to:  @email,

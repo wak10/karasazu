@@ -1,13 +1,19 @@
 class Public::GrowPlantsController < ApplicationController
 
   def index
+    # @plants = Plant.all
+
     @grow_plants = GrowPlant.all
     @grow_plants.find_each do |grow_plant|
       @frequency = grow_plant.plant.frequency
       grow_plant.logs.last(1).each do |last_log|
         @next_log = last_log.created_at.to_date + @frequency.days
-        @today = Date.todaygit
+        @today = Date.today
         if @next_log <= @today
+
+          # logに紐付いているgrow_plantを取得し、water.mailer.rbへ送る
+          @grow_plant = grow_plant
+          WaterMailer.send_mail(grow_plant).deliver_now
           p "send_mail"
         elsif
           p "false"
