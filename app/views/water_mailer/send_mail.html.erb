@@ -8,7 +8,30 @@
   <hr />
   <p>
     こんにちは！</br >
-    今日は<%= @grow_plant.nick_name %>の水やり日です</p>
+    今日は<%= @grow_plant.nick_name %>の水やり日です!</br >
+    サイトへは<%= link_to "こちら", @url %>からアクセスできます</p>
   <hr />
+  <table>
+    <tr>
+      <td>植物名:</td>
+      <td><%= @grow_plant.plant.plant_name %></td>
+    </tr>
+    <tr>
+      <td>愛称:</td>
+      <td><%= @grow_plant.nick_name %></td>
+    </tr>
+    <tr>
+      <td>水やり水量:</td>
+      <td><%= @grow_plant.plant.amount %></td>
+    </tr>
+    <tr>
+      <td>育成環境:</td>
+      <td><%= @grow_plant.place %></td>
+    </tr>
+    <tr>
+      <td>育成アドバイス</td>
+      <td><%= @grow_plant.plant.advice %></td>
+      </tr>
+  </table>
 </body>
 </html>
