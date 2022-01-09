@@ -5,7 +5,7 @@ class GrowPlant < ApplicationRecord
 
   enum place:{ 日向:0, 半日陰:1 }
 
-  def send_mail
+  def self.send_mail
     @grow_plants = GrowPlant.all
     @grow_plants.find_each do |grow_plant|
       @frequency = grow_plant.plant.frequency
@@ -14,12 +14,11 @@ class GrowPlant < ApplicationRecord
         @today = Date.today
         if @next_log <= @today
           @grow_plant = grow_plant
-        WaterMailer.send_mail(@grow_plant).deliver
+          WaterMailer.send_mail(@grow_plant).deliver
           p "send_mail"
         else
           p "false"
         end
-        redirect_to top_path and return
       end
     end
   end

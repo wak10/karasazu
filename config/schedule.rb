@@ -3,6 +3,7 @@
   set :environment, rails_env
   set :output, 'log/cron.log'
 
-  every 2.minute do
+
+  every :day, at: "9:00 am" do
     runner "GrowPlant.send_mail"
   end
