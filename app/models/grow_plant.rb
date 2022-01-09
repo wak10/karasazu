@@ -5,8 +5,6 @@ class GrowPlant < ApplicationRecord
 
   enum place:{ 日向:0, 半日陰:1 }
 
-
-
   def send_mail
     @grow_plants = GrowPlant.all
     @grow_plants.find_each do |grow_plant|

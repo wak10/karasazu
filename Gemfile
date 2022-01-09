@@ -74,3 +74,5 @@ gem 'font-awesome-sass', '~> 5.13'
 gem "enum_help"
 
 gem 'whenever', require: false
+
+gem 'simple_calendar', '~> 2.0'

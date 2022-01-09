@@ -4,13 +4,16 @@
   <meta content="text/html; charset=UTF-8" />
 </head>
 <body>
-  <h2><%= @grow_plant.user.name %> 様</h2>
+  <h2>
+    こんにちは！
+    <%= @grow_plant.user.name %> さん
+  </h2>
+
   <hr />
-  <p>
-    こんにちは！</br >
-    今日は<%= @grow_plant.nick_name %>の水やり日です!</br >
-    サイトへは<%= link_to "こちら", @url %>からアクセスできます</p>
+    <p>今日は｢<%= @grow_plant.nick_name %>｣の水やり日です!</p>
+    <p>サイトへは<%= link_to "こちら", @url %>からアクセスできます</p>
   <hr />
+
   <table>
     <tr>
       <td>植物名:</td>
@@ -33,5 +36,6 @@
       <td><%= @grow_plant.plant.advice %></td>
       </tr>
   </table>
+  <%= image_tag attachments['logo_top.png'].url %>
 </body>
 </html>

@@ -3,6 +3,8 @@ class CreateLogs < ActiveRecord::Migration[5.2]
     create_table :logs do |t|
       t.integer :grow_plant_id
       t.integer :user_id
+      t.datetime :start_time
+
       t.timestamps
     end
   end

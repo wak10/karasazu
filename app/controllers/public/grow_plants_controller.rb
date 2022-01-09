@@ -19,6 +19,8 @@ class Public::GrowPlantsController < ApplicationController
     @grow_plant = GrowPlant.find(params[:id])
     @log = Log.new
     @frequency = @grow_plant.plant.frequency
+
+
   end
 
   def complete
@@ -49,5 +51,6 @@ class Public::GrowPlantsController < ApplicationController
   def log_params
     params.require(:log).permit( :grow_plant_id, :user_id, :created_at)
   end
+
 
 end
