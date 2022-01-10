@@ -50,21 +50,13 @@
       <%= link_to "枯れてしまった…", grow_plant_path(@grow_plant), method: :delete, class: "btn btn-outline-danger btn-lg ml-5" %>
     </div>
 
-<!--表示させたいlog-->
-      <% @grow_plant.logs.each do |complete_log| %>
-  		    <div>
-  		      <%= complete_log.created_at %>
-  		      <%= complete_log.grow_plant.nick_name %>
-  		    </div>
-  		  <% end %>
-
-
-    <div>
-      <%= month_calendar events: @grow_plant.logs do |date, complete_log| %>
+    <div class="d-flex align-items-center justify-content-center mt-5">
+      <%= month_calendar events: @logs do |date, logs| %>
   		  <%= date.day %>
-  		  <% complete_log.each do |complete_log| %>
+  		  <% logs.each do |logs| %>
   		    <div>
-  		      <%= complete_log.created_at %>
+  		      <%= image_tag 'karasazu_logo.png', size: '20x20' %>
+  		      <span><%= logs.created_at.strftime('%H:%M') %></span>
   		    </div>
   		  <% end %>
   		<% end %>

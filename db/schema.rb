@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2021_12_25_103252) do
   create_table "logs", force: :cascade do |t|
     t.integer "grow_plant_id"
     t.integer "user_id"
-    t.datetime "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

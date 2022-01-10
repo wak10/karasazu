@@ -19,8 +19,7 @@ class Public::GrowPlantsController < ApplicationController
     @grow_plant = GrowPlant.find(params[:id])
     @log = Log.new
     @frequency = @grow_plant.plant.frequency
-
-
+    @logs = @grow_plant.logs.includes(:grow_plant)
   end
 
   def complete

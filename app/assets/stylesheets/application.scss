@@ -19,12 +19,12 @@
 @import 'font-awesome';
 
 @font-face{
-  font-family:  'Senobi-Gothic-Bold';
-  src: font-url('assets/Senobi-Gothic-Bold.ttf');
+  font-family:  'YuseiMagic-Regular';
+  src: font-url('assets/YuseiMagic-Regular.ttf');
 }
 
 *{
-  font-family: Senobi-Gothic-Bold;
+  font-family: YuseiMagic-Regular;
 }
 
 table, th, td {
@@ -107,6 +107,12 @@ header {
   margin: 0 5%;
 }
 
+.icon{
+  .image{
+    margin: 0;
+  }
+}
+
 .simple-calendar {
  .day {}
  .wday-0 {
@@ -128,6 +134,6 @@ header {
  .next-month {}
  .current-month {}
  .has-events {
-   background: #98fb98;
+   background: #c2ffc2;
  }
 }
