@@ -1,8 +1,13 @@
     <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
       <div class="m-2"><%= attachment_image_tag @grow_plant.plant, :image, :fill, 200, 200 %></div>
       <div class="align-items-center justify-content-center ml-5">
-        <h2>育成植物詳細</h2>
+
+
         <table class="table table-border">
+          <tr>
+            <td><h2>育成植物詳細</h2></td>
+            <td class="text-right"><%= link_to "編集ページへ", edit_grow_plant_path(@grow_plant), class: "btn btn-outline-secondary" %></td>
+          </tr>
           <tr>
             <td>植物名</td>
             <td><%= @grow_plant.plant.plant_name %></td>
@@ -37,6 +42,7 @@
             <td>育成開始日</td>
             <td><%= l @grow_plant.created_at %></td>
           </tr>
+
         </table>
       </div>
     </div>

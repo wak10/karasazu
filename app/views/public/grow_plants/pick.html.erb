@@ -16,7 +16,7 @@
         <td><%= f.text_field :nick_name %></td>
       </tr>
       <tr>
-        <td><%= f.label :place, "日当り" %></td>
+        <td><%= f.label :place, "育成環境" %></td>
         <td><%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%></td>
       </tr>
       <tr>

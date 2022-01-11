@@ -29,9 +29,16 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def edit
+    @grow_plant = GrowPlant.find(params[:id])
   end
 
-  def updete
+  def update
+    @grow_plant = GrowPlant.find(params[:id])
+    if @grow_plant.update(grow_plant_params)
+      redirect_to grow_plant_path
+    else
+      render :edit
+    end
   end
 
   def destroy

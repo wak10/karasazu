@@ -1,0 +1,29 @@
+<div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
+      <div class="m-2"><%= attachment_image_tag @grow_plant.plant, :image, :fill, 200, 200 %></div>
+      <div class="align-items-center justify-content-center ml-5">
+        <h2>育成植物編集</h2>
+        <table class="table table-border">
+          <tr>
+            <td>植物名</td>
+            <td><%= @grow_plant.plant.plant_name %></td>
+          </tr>
+          <tr>
+
+        <%= form_with model: @grow_plant, url: grow_plant_path, method: :patch, local: true do |f| %>
+          <tr>
+            <td><%= f.label :nick_name, "愛称" %></td>
+            <td><%= f.text_field :nick_name %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :place, "育成環境" %></td>
+            <td><%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%></td>
+          </tr>
+          <tr>
+            <td><%= f.submit "更新する", class: "btn btn-outline-primary" %></td>
+            <td></td>
+          </tr>
+        <% end %>
+
+        </table>
+      </div>
+    </div>
