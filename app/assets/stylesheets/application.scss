@@ -27,9 +27,9 @@
   font-family: YuseiMagic-Regular;
 }
 
-table, th, td {
-  width: auto !important;
-}
+// table, th, td {
+//   width: auto !important;
+// }
 
 header {
   width: 100vw;
@@ -109,14 +109,14 @@ header {
 
 .icon{
   .image{
-    margin: 0;
+    margin: 0 auto;
   }
 }
 
 .simple-calendar {
  .day {}
  .wday-0 {
-   color: red;
+   background-color: #FA8072;
  }
  .wday-1 {}
  .wday-2 {}
@@ -124,7 +124,7 @@ header {
  .wday-4 {}
  .wday-5 {}
  .wday-6 {
-   color:  blue;
+   background-color:  #87CEEB;
  }
  .today {}
  .past {}
@@ -136,4 +136,8 @@ header {
  .has-events {
    background: #c2ffc2;
  }
+}
+
+.calendar-title{
+  font-size: 2rem;
 }
