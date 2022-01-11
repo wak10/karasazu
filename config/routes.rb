@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root "homes#about"
     get "/top" => "homes#top"
     resource :users, only:[:show, :edit, :update]
-    resources :grow_plants, except:[:edit, :new]
+    resources :grow_plants, except:[:new]
     get "/grow_plants/pick/:id" => "grow_plants#pick", as: "pick"
     post "/grow_plants/complete/:id" => "grow_plants#complete", as: "complete"
 
@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords],controllers: {
     sessions: "admin/sessions"
   }
+
 
 end

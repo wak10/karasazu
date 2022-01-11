@@ -28,6 +28,9 @@ class Public::GrowPlantsController < ApplicationController
     redirect_to action: :show
   end
 
+  def edit
+  end
+
   def updete
   end
 
