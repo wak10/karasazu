@@ -1,5 +1,7 @@
 {
   "name": "mini_tera",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery.pep.js": "^0.6.10"
+  }
 }
