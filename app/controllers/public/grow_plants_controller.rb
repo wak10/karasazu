@@ -1,4 +1,9 @@
 class Public::GrowPlantsController < ApplicationController
+  before_action :authenticate_user!
+
+  def top
+    @grow_plants = current_user.grow_plants
+  end
 
   def index
     @plants = Plant.all
@@ -11,8 +16,11 @@ class Public::GrowPlantsController < ApplicationController
 
   def create
     @grow_plant = current_user.grow_plants.new(grow_plant_params)
-    @grow_plant.save
+    if @grow_plant.save
     redirect_to  top_path
+    else
+      render :pick
+    end
   end
 
   def show
@@ -35,7 +43,7 @@ class Public::GrowPlantsController < ApplicationController
   def update
     @grow_plant = GrowPlant.find(params[:id])
     if @grow_plant.update(grow_plant_params)
-      redirect_to grow_plant_path
+      redirect_to action: :show
     else
       render :edit
     end

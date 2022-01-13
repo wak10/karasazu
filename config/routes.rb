@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root "homes#about"
-    get "/top" => "homes#top"
     resource :users, only:[:show, :edit, :update]
     resources :grow_plants, except:[:new]
+    get "/top" => "grow_plants#top"
     get "/grow_plants/pick/:id" => "grow_plants#pick", as: "pick"
     post "/grow_plants/complete/:id" => "grow_plants#complete", as: "complete"
 

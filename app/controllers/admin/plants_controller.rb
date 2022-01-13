@@ -1,4 +1,6 @@
 class Admin::PlantsController < ApplicationController
+  before_action :authenticate_admin!
+
 
   def index
     @plants = Plant.all
@@ -10,8 +12,12 @@ class Admin::PlantsController < ApplicationController
 
   def create
     @plant = Plant.new(plant_params)
-    @plant.save
-    redirect_to admin_plants_path
+    if @plant.save
+      redirect_to admin_plants_path
+    else
+      render :new
+    end
+
   end
 
   def edit

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_beginning_of_week
 
+
   private
   def set_beginning_of_week
     Date.beginning_of_week = :sunday
