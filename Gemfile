@@ -76,3 +76,8 @@ gem "enum_help"
 gem 'whenever', require: false
 
 gem 'simple_calendar', '~> 2.0'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
