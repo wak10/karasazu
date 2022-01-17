@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_12_25_103252) do
     t.integer "frequency"
     t.string "amount"
     t.string "advice"
+    t.integer "recommend_place", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

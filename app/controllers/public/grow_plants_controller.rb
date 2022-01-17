@@ -58,7 +58,7 @@ class Public::GrowPlantsController < ApplicationController
   private
 
   def plant_paramas
-    params.require(:plant).permit( :plant_name, :image, :frequency, :amount, :advice)
+    params.require(:plant).permit( :plant_name, :image, :frequency, :amount, :advice, :recommend_place)
   end
 
   def grow_plant_params

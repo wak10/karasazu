@@ -26,7 +26,10 @@
           </tr>
           <tr>
             <td>育成環境</td>
-            <td><%= @grow_plant.place %></td>
+            <td>
+              <%= @grow_plant.place %>
+              <p class="text-muted">推奨環境は｢<%= @grow_plant.plant.recommend_place %>｣です</p>
+            </td>
           </tr>
           <tr>
             <td class="nowrap">育成アドバイス</td>
