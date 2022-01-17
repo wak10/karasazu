@@ -9,20 +9,23 @@
       </tr>
 
       <%= form_with model: @grow_plant, url: grow_plants_path, local: true do |f| %>
-        <%= f.hidden_field :plant_id, value: @plant.id %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
       <tr>
         <td><%= f.label :nick_name, "愛称" %></td>
         <td><%= f.text_field :nick_name %></td>
       </tr>
       <tr>
         <td><%= f.label :place, "育成環境" %></td>
-        <td><%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%></td>
+        <td>
+          <%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%>
+          <p class="text-muted">推奨環境は｢<%= @plant.recommend_place %>｣です</p>
+        </td>
       </tr>
       <tr>
         <td><%= f.submit "育成中へ登録する", class: "btn btn-outline-primary" %></td>
         <td></td>
       </tr>
+        <%= f.hidden_field :plant_id, value: @plant.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
       <% end %>
 
     </table>
