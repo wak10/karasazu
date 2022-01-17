@@ -17,7 +17,7 @@ class Public::GrowPlantsController < ApplicationController
   def create
     @grow_plant = current_user.grow_plants.new(grow_plant_params)
     if @grow_plant.save
-    redirect_to  top_path
+      redirect_to  top_path
     else
       render :pick
     end
