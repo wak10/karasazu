@@ -17,7 +17,7 @@
         <td><%= f.label :place, "育成環境" %></td>
         <td>
           <%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%>
-          <p class="text-muted">推奨環境は｢<%= @plant.recommend_place %>｣です</p>
+          <span class="text-muted">推奨環境は｢<%= @plant.recommend_place %>｣です</span>
         </td>
       </tr>
       <tr>
