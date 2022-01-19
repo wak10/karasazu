@@ -6,6 +6,7 @@ class CreatePlants < ActiveRecord::Migration[5.2]
       t.integer :frequency
       t.string :amount
       t.string :advice
+      t.integer :recommend_place, null: false, default: 0
       t.timestamps
     end
   end

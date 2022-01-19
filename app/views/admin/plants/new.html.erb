@@ -1,7 +1,7 @@
-<%= form_with model: @plant, url: admin_plants_path, local:true do |f| %>
-	<div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
+<div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
   	<div class="m-2">
   		<div><%= attachment_image_tag @plant, :image, :fill, 300, 300 , fallback: "karasazu_logo.jpg" %></div>
+  <%= form_with model: @plant, url: admin_plants_path, local:true do |f| %>
   		<div><%= f.attachment_field :image %></div>
   	</div>
     <div class="align-items-center justify-content-center m-2">
@@ -20,11 +20,15 @@
           <td><%= f.text_field :amount %></td>
         </tr>
         <tr>
+          <td><%= f.label :recommend_place, "推奨環境" %></td>
+          <td><%= f.select :recommend_place, Plant.recommend_places.keys.to_a, {}, class: 'form-control'%></td>
+        </tr>
+        <tr>
           <td><%= f.label :advice, "育成アドバイス" %></td>
           <td><%= f.text_area :advice %></td>
         </tr>
       </table>
 		<%= f.submit '登録する', class: "btn btn-outline-primary" %>
+  <% end %>
     </div>
-  </div>
-<% end %>
+</div>
