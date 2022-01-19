@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_12_25_103252) do
   create_table "grow_plants", force: :cascade do |t|
     t.integer "plant_id"
     t.integer "user_id"
+    t.string "image_id"
     t.string "nick_name"
     t.integer "place", default: 0, null: false
     t.datetime "created_at", null: false

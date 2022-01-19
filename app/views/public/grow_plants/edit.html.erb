@@ -1,6 +1,10 @@
 <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
-      <div class="m-2"><%= attachment_image_tag @grow_plant.plant, :image, :fill, 200, 200 %></div>
-      <div class="align-items-center justify-content-center ml-5">
+      <div class="justify-content-center m-2">
+        <%= form_with model: @grow_plant, url: grow_plant_path, method: :patch, local: true do |f| %>
+        <%= attachment_image_tag @grow_plant, :image, :fill, 200, 200 %></br >
+  	      <%= f.attachment_field :image %>
+      </div>
+      <div class="align-items-center justify-content-center">
         <h2>育成植物編集</h2>
         <table class="table table-border">
           <tr>
@@ -9,7 +13,6 @@
           </tr>
           <tr>
 
-        <%= form_with model: @grow_plant, url: grow_plant_path, method: :patch, local: true do |f| %>
           <tr>
             <td><%= f.label :nick_name, "愛称" %></td>
             <td><%= f.text_field :nick_name %></td>
@@ -30,3 +33,5 @@
         </table>
       </div>
     </div>
+
+
