@@ -1,5 +1,9 @@
 <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
-  <div class="m-2"><%= attachment_image_tag @plant, :image, :fill, 200, 200 %></div>
+  <div class="m-2">
+    <%= form_with model: @grow_plant, url: grow_plants_path, local: true do |f| %>
+    <%= attachment_image_tag @plant, :image, :fill, 200, 200 %></br >
+      <%= f.attachment_field :image %>
+  </div>
   <div class="align-items-center justify-content-center ml-5">
     <h2>育成植物選択</h2>
     <table class="table table-border">
@@ -8,7 +12,6 @@
         <td><%= @plant.plant_name %></td>
       </tr>
 
-      <%= form_with model: @grow_plant, url: grow_plants_path, local: true do |f| %>
       <tr>
         <td><%= f.label :nick_name, "愛称" %></td>
         <td><%= f.text_field :nick_name %></td>
@@ -17,7 +20,7 @@
         <td><%= f.label :place, "育成環境" %></td>
         <td>
           <%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%>
-          <p class="text-muted">推奨環境は｢<%= @plant.recommend_place %>｣です</p>
+          <span class="text-muted">推奨環境は｢<%= @plant.recommend_place %>｣です</span>
         </td>
       </tr>
       <tr>

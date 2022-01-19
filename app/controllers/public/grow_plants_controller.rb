@@ -16,6 +16,8 @@ class Public::GrowPlantsController < ApplicationController
 
   def create
     @grow_plant = current_user.grow_plants.new(grow_plant_params)
+    @grow_plant.image ||= @grow_plant.plant.image
+
     if @grow_plant.save
       redirect_to  top_path
     else
@@ -62,7 +64,7 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def grow_plant_params
-    params.require(:grow_plant).permit( :plant_id, :user_id, :nick_name, :place)
+    params.require(:grow_plant).permit( :plant_id, :user_id, :nick_name, :place, :image)
   end
 
   def log_params
