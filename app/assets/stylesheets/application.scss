@@ -14,6 +14,7 @@
  *= require_tree .
  *= require_self
  */
+
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
@@ -81,59 +82,3 @@ header {
   margin: 20px 0;
 }
 
-.nowrap {
-  white-space: nowrap;
-}
-
-.above {
-  padding: 15px 0;
-}
-
-.side {
-  padding: 15px 0;
-  height: 80vh;
-}
-.around{
-  background-color: #bdbd8f;
-  margin: 0;
-}
-
-.room {
-  width: 90%;
-  margin: 0 5%;
-}
-
-.icon{
-  .image{
-    margin: 0 auto;
-  }
-}
-
-.simple-calendar {
- .day {}
- .wday-0 {
-   background-color: #FA8072;
- }
- .wday-1 {}
- .wday-2 {}
- .wday-3 {}
- .wday-4 {}
- .wday-5 {}
- .wday-6 {
-   background-color:  #87CEEB;
- }
- .today {}
- .past {}
- .future {}
- .start-date {}
- .prev-month {}
- .next-month {}
- .current-month {}
- .has-events {
-   background: #c2ffc2;
- }
-}
-
-.calendar-title{
-  font-size: 2rem;
-}

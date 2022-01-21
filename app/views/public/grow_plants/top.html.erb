@@ -18,26 +18,95 @@
             <%= attachment_image_tag grow_plant, :image, :fill, 120, 120 %>
           <% end %>
         </div>
-
         <div class="d-flex align-items-center justify-content-center">
           <p><%= grow_plant.nick_name %></p>
-
         </div>
       <% end %>
     </div>
-    <div class="col d-flex align-items-center">
-      <%= image_tag 'isometric_drawing.png', class: "room"%>
-    </div>
+    <div class="col d-flex align-items-center icon-wrapper">
+      <%= image_tag 'isometric_drawing.png', class: "isometric"%>
+
+      <div class="display-icon">
+        <% if @sunny_place[0] %>
+          <div id="sunny-icon0">
+            <%= link_to grow_plant_path(@sunny_place[0]) do %>
+              <%= attachment_image_tag @sunny_place[0], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @sunny_place[1] %>
+          <div id="sunny-icon1">
+            <%= link_to grow_plant_path(@sunny_place[1]) do %>
+              <%= attachment_image_tag @sunny_place[1], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @sunny_place[2] %>
+          <div id="sunny-icon2">
+            <%= link_to grow_plant_path(@sunny_place[2]) do %>
+              <%= attachment_image_tag @sunny_place[2], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @sunny_place[3] %>
+          <div id="sunny-icon3">
+            <%= link_to grow_plant_path(@sunny_place[3]) do %>
+              <%= attachment_image_tag @sunny_place[3], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @sunny_place[4] %>
+          <div id="sunny-icon4">
+            <%= link_to grow_plant_path(@sunny_place[4]) do %>
+              <%= attachment_image_tag @sunny_place[4], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @half_sunny_place[0] %>
+          <div id="half-sunny-icon0">
+            <%= link_to grow_plant_path(@half_sunny_place[0]) do %>
+              <%= attachment_image_tag @half_sunny_place[0], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @half_sunny_place[1] %>
+          <div id="half-sunny-icon1">
+            <%= link_to grow_plant_path(@half_sunny_place[1]) do %>
+              <%= attachment_image_tag @half_sunny_place[1], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @half_sunny_place[2] %>
+          <div id="half-sunny-icon2">
+            <%= link_to grow_plant_path(@half_sunny_place[2]) do %>
+              <%= attachment_image_tag @half_sunny_place[2], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @half_sunny_place[3] %>
+          <div id="half-sunny-icon3">
+            <%= link_to grow_plant_path(@half_sunny_place[3]) do %>
+              <%= attachment_image_tag @half_sunny_place[3], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if @half_sunny_place[4] %>
+          <div id="half-sunny-icon4">
+            <%= link_to grow_plant_path(@half_sunny_place[4]) do %>
+              <%= attachment_image_tag @half_sunny_place[4], :image, :fill, 50, 50 %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
   </div>
-
-  <%# binding.pry%>
-  <!--<if @grow_plants[0] >-->
-  <!--  <div>-->
-  <!--    <%#= attachment_image_tag @grow_plants[0].plant, :image, :fill, 120, 120 %>-->
-  <!--  </div>-->
-
-  <!--<elsif @grow_plants[1].plant.image >-->
-  <!--  <div id="">-->
-  <!--    <%#= attachment_image_tag @grow_plants[1].plant, :image, :fill, 120, 120 %>-->
-  <!--  </div>-->
-  <!--<end>-->
+</div>
