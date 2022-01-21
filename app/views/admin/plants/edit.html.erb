@@ -29,7 +29,7 @@
         </tr>
         <tr>
           <td><%= f.submit '更新する', class: "btn btn-outline-primary" %></td>
-          <td></td>
+          <td class="text-right"><%= link_to "削除する",  admin_plant_path(@plant), data: { confirm: '本当に削除しますか？' }, method: :delete, class: "btn btn-outline-danger" %></td>
         </tr>
       </table>
     </div>
