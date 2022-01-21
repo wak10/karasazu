@@ -28,12 +28,15 @@
   position: relative;
 }
 
-
 #sunny-icon0{
   position: absolute;
   top: 54%;
   left: 54%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #sunny-icon1{
@@ -41,6 +44,10 @@
   top: 52%;
   left: 35%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #sunny-icon2{
@@ -48,6 +55,10 @@
   top: 70%;
   left: 75%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #sunny-icon3{
@@ -55,6 +66,10 @@
   top: 47%;
   left: 43%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #sunny-icon4{
@@ -62,6 +77,10 @@
   top: 65%;
   left: 63%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #half-sunny-icon0{
@@ -69,6 +88,10 @@
   top: 39%;
   left: 65%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #half-sunny-icon1{
@@ -76,6 +99,10 @@
   top: 53%;
   left: 80%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #half-sunny-icon2{
@@ -83,6 +110,10 @@
   top: 58%;
   left: 15%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #half-sunny-icon3{
@@ -90,6 +121,10 @@
   top: 42%;
   left: 54%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
 
 #half-sunny-icon4{
@@ -97,13 +132,11 @@
   top: 69%;
   left: 14%;
   transform: translate(-50%, -50%);
+  :hover {
+	  transform: scale(1.2, 1.2);
+	  transition: all 0.3s ease 0s;
+  }
 }
-
-// .icon{
-//   .image{
-//     margin: 0 auto;
-//   }
-// }
 
 .simple-calendar {
  .day {}
