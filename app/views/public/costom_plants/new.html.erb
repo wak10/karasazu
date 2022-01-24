@@ -1,0 +1,30 @@
+<%= form_with model: @costom_plant, url: costom_add_path, local: true do |f| %>
+  <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
+    <div>
+      <%= attachment_image_tag @costom_plant, :image, :fill, size: '200x200', fallback: "costom_no_image.png" %></br >
+      <%= f.attachment_field :image %>
+    </div>
+    <div class="align-items-center justify-content-center">
+      <h2>カスタム植物情報</h2>
+      <table class="table table-border">
+        <tr>
+          <td><%= f.label :plant_name, "植物名" %></td>
+          <td><%= f.text_field :plant_name %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :frequency, "水やり頻度" %></td>
+          <td><%= f.text_field :frequency %>日ごと</td>
+        </tr>
+        <tr>
+          <td><%= f.label :amount, "水量" %></td>
+          <td><%= f.text_field :amount %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="text-right"><%= f.submit "登録する", class: "btn btn-outline-primary" %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+<% end %>

@@ -8,7 +8,9 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def index
+    @costom_plants = current_user.costom_plants
     @plants = Plant.all
+
   end
 
   def pick
@@ -73,5 +75,8 @@ class Public::GrowPlantsController < ApplicationController
     params.require(:log).permit( :grow_plant_id, :user_id, :created_at)
   end
 
+  def costom_plant_params
+    params.require(:costom_plant).permit( :user_id, :plant_name, :image, :frequency, :amount)
+  end
 
 end

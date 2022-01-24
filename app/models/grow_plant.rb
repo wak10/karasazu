@@ -1,11 +1,12 @@
 class GrowPlant < ApplicationRecord
   belongs_to :user
   belongs_to :plant
+  belongs_to :costom_plants
   has_many :logs, dependent: :destroy
+
   attachment :image
 
   enum place:{ 日向:0, 半日陰:1 }
-
 
   def self.send_mail
     @grow_plants = GrowPlant.all

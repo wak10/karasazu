@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :grow_plants, dependent: :destroy
+  has_many :costom_plants, dependent: :destroy
+
   attachment :image
 end
