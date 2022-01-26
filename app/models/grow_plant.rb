@@ -1,7 +1,7 @@
 class GrowPlant < ApplicationRecord
   belongs_to :user
   belongs_to :plant
-  belongs_to :costom_plants
+  belongs_to :coutom_plant
   has_many :logs, dependent: :destroy
 
   attachment :image

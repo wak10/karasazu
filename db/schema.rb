@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_22_060945) do
+ActiveRecord::Schema.define(version: 2022_01_26_125930) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -56,10 +56,22 @@ ActiveRecord::Schema.define(version: 2022_01_22_060945) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "custom_plants", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "plant_name"
+    t.string "image_id"
+    t.integer "frequency"
+    t.string "amount"
+    t.string "advice"
+    t.integer "recommend_place", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "grow_plants", force: :cascade do |t|
     t.integer "plant_id"
-    t.integer "costom_plant_id"
     t.integer "user_id"
+    t.integer "custom_plant_id"
     t.string "image_id"
     t.string "nick_name"
     t.integer "place", default: 0, null: false
@@ -76,6 +88,7 @@ ActiveRecord::Schema.define(version: 2022_01_22_060945) do
 
   create_table "plants", force: :cascade do |t|
     t.string "plant_name"
+    t.integer "user_id"
     t.string "image_id"
     t.integer "frequency"
     t.string "amount"

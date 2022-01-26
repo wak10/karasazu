@@ -3,22 +3,22 @@
     <h2>植物情報一覧</h2>
     <div class="text-secondary">
       一覧にない植物は</br >
-      <%= link_to "カスタム作成", new_costom_plant_path, method: :get, class: "btn btn-outline-secondary" %>
+      <%= link_to "カスタム作成", new_custom_plant_path, class: "btn btn-outline-secondary" %>
       </div>
   </div>
     <div class="row">
-      <% @costom_plants.each do |costom_plant| %>
-        <div class="col mb-5">
-          <div class="d-flex align-items-center justify-content-center">
-            <%= link_to costom_pick_path(costom_plant) do %>
-              <%= attachment_image_tag costom_plant, :image, :fill, 150, 150 %>
-            <% end %>
-          </div>
-          <div class="d-flex align-items-center justify-content-center">
-            <p><%= costom_plant.plant_name %><p>
-          </div>
-        </div>
-      <% end %>
+      <!--<%# @custom_plants.each do |custom_plant| %>-->
+      <!--  <div class="col mb-5">-->
+      <!--    <div class="d-flex align-items-center justify-content-center">-->
+      <!--      <%#= link_to custom_pick_path(custom_plant) do %>-->
+      <!--        <%#= attachment_image_tag custom_plant, :image, :fill, 150, 150 %>-->
+      <!--      <%# end %>-->
+      <!--    </div>-->
+      <!--    <div class="d-flex align-items-center justify-content-center">-->
+      <!--      <p><%#= custom_plant.plant_name %><p>-->
+      <!--    </div>-->
+      <!--  </div>-->
+      <!--<%# end %>-->
 
       <% @plants.each do |plant| %>
         <div class="col mb-5">

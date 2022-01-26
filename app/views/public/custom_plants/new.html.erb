@@ -1,13 +1,13 @@
-<%= form_with model: @costom_plant, url: costom_add_path, local: true do |f| %>
+<%= form_with model: @custom_plant, url: custom_plants_path, local: true do |f| %>
   <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
     <div>
-      <%= attachment_image_tag @costom_plant, :image, :fill, size: '200x200', fallback: "costom_no_image.png" %></br >
+      <%= attachment_image_tag @custom_plant, :image, :fill, size: '200x200', fallback: "custom_no_image.png" %></br >
       <%= f.attachment_field :image %>
     </div>
     <div class="align-items-center justify-content-center">
       <h2>カスタム植物情報</h2>
-      <table class="table table-border">
-        <tr>
+		  <table class="table table-border">
+	      <tr>
           <td><%= f.label :plant_name, "植物名" %></td>
           <td><%= f.text_field :plant_name %></td>
         </tr>
@@ -20,8 +20,16 @@
           <td><%= f.text_field :amount %></td>
         </tr>
         <tr>
+          <td><%= f.label :recommend_place, "推奨環境" %></td>
+          <td><%= f.select :recommend_place, CustomPlant.recommend_places.keys.to_a, {}, class: 'form-control'%></td>
+        </tr>
+        <tr>
+          <td><%= f.label :advice, "育成アドバイス" %></td>
+          <td><%= f.text_area :advice %></td>
+        </tr>
+        <tr>
           <td></td>
-          <td class="text-right"><%= f.submit "登録する", class: "btn btn-outline-primary" %></td>
+          <td><%= f.submit '登録する', class: "btn btn-outline-primary" %></td>
         </tr>
       </table>
     </div>
