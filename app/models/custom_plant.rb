@@ -1,0 +1,2 @@
+class CustomPlant < ApplicationRecord
+end
