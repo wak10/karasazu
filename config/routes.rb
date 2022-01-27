@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get "/grow_plants/pick/:id" => "grow_plants#pick", as: "pick"
     post "/grow_plants/complete/:id" => "grow_plants#complete", as: "complete"
     resources :custom_plants, except:[:show, :index]
+    get "/custom_plants/pick/:id" => "custom_plants#pick", as: "custom_pick"
+    post "/custom_plants/add" => "custom_plants#add", as: "custom_add"
   end
 
   devise_for :users, skip: [:passwords],controllers: {

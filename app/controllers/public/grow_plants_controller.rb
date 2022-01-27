@@ -8,7 +8,7 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def index
-    # @custom_plants = current_user.custom_plants
+    @custom_plants = CustomPlant.where(user_id: current_user.id)
     @plants = Plant.all
 
   end

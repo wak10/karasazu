@@ -7,18 +7,18 @@
       </div>
   </div>
     <div class="row">
-      <!--<%# @custom_plants.each do |custom_plant| %>-->
-      <!--  <div class="col mb-5">-->
-      <!--    <div class="d-flex align-items-center justify-content-center">-->
-      <!--      <%#= link_to custom_pick_path(custom_plant) do %>-->
-      <!--        <%#= attachment_image_tag custom_plant, :image, :fill, 150, 150 %>-->
-      <!--      <%# end %>-->
-      <!--    </div>-->
-      <!--    <div class="d-flex align-items-center justify-content-center">-->
-      <!--      <p><%#= custom_plant.plant_name %><p>-->
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--<%# end %>-->
+      <% @custom_plants.each do |custom_plant| %>
+        <div class="col mb-5">
+          <div class="d-flex align-items-center justify-content-center">
+            <%= link_to custom_pick_path(custom_plant) do %>
+              <%= attachment_image_tag custom_plant, :image, :fill, 150, 150 %>
+            <% end %>
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <p><%= custom_plant.plant_name %><p>
+          </div>
+        </div>
+      <% end %>
 
       <% @plants.each do |plant| %>
         <div class="col mb-5">

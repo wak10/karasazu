@@ -1,15 +1,15 @@
-<%= form_with model: @grow_plant_new, url: costom_plants_path, local: true do |f| %>
+<%= form_with model: @grow_plant, url: custom_add_path, local: true do |f| %>
   <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
     <div class="m-2">
-      <%= attachment_image_tag @costom_plant, :image, :fill, 200, 200 %></br >
-      <%#= f.attachment_field :image %>
+      <%= attachment_image_tag @custom_plant, :image, :fill, 200, 200 %></br >
+      <%= f.attachment_field :image %>
     </div>
     <div class="align-items-center justify-content-center">
       <h2>育成植物選択</h2>
       <table class="table table-border">
         <tr>
           <td>植物名</td>
-          <td><%= @costom_plant.plant_name %></td>
+          <td><%= @custom_plant.plant_name %></td>
         </tr>
         <tr>
           <td><%= f.label :nick_name, "愛称" %></td>
@@ -19,6 +19,7 @@
           <td><%= f.label :place, "育成環境" %></td>
           <td>
             <%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%>
+            <span class="text-muted">推奨環境は｢<%= @custom_plant.recommend_place %>｣です</span>
           </td>
         </tr>
         <tr>
@@ -28,7 +29,6 @@
       </table>
     </div>
   </div>
-  <%= f.hidden_field :costom_plant_id, value: @costom_plant.id %>
+  <%= f.hidden_field :plant_id, value: @custom_plant.id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :image, value: @costom_plant.image %>
 <% end %>

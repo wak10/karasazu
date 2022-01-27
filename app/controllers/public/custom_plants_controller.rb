@@ -14,22 +14,21 @@ class Public::CustomPlantsController < ApplicationController
     end
   end
 
-  # def pick
-  #   @grow_plant_new = GrowPlant.new
-  #   @custom_plant = CustomPlant.find(params[:id])
-  # end
+  def pick
+    @custom_plant = CustomPlant.find(params[:id])
+    @grow_plant = GrowPlant.new
+  end
 
-  # def create
-  #   @grow_plant_new = current_user.grow_plants.new(grow_plant_params)
-  #   @custom_plant = CustomPlant.find(params[:id])
+  def add
+    @grow_plant = current_user.grow_plants.new(grow_plant_params)
+    @grow_plant.image ||= @grow_plant.custom_plant.image
 
-  #   byebug
-  #   if @grow_plant.save
-  #     redirect_to  top_path
-  #   else
-  #     render :pick
-  #   end
-  # end
+    if @grow_plant.save
+      redirect_to  top_path
+    else
+      render :pick
+    end
+  end
 
 
   private
