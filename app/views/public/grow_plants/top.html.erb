@@ -84,15 +84,24 @@
         <i class="fas fa-plus-circle fa-3x"></i>
       <% end %>
     </div>
-    <% @grow_plants.each do |grow_plant| %>
-      <div class="d-flex align-items-center justify-content-center icon">
-        <%= link_to grow_plant_path(grow_plant) do %>
-          <%= attachment_image_tag grow_plant, :image, :fill, 120, 120 %>
-        <% end %>
+    <div class="text-center">
+      <% @grow_plants.each do |grow_plant| %>
+      <div class="my-2">
+
+        <div class="icon">
+          <%= link_to grow_plant_path(grow_plant) do %>
+            <%= attachment_image_tag grow_plant, :image, :fill, 100, 100, class:"mx-2" %>
+          <% end %>
+        </div>
+        <div class="text-center">
+          <span class="lead"><%= grow_plant.nick_name %></span></br >
+          <% grow_plant.logs.last(1).each do |last_log| %>
+            <% @frequency = grow_plant.plant.frequency %>
+            <span>次回水やり日︰<%= l last_log.created_at + @frequency.days, format: :short %></span>
+          <% end %>
+        </div>
       </div>
-      <div class="d-flex align-items-center justify-content-center top-list">
-        <p><%= grow_plant.nick_name %></p>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
