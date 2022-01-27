@@ -4,7 +4,7 @@
 
 .side {
   padding: 15px 0;
-  height: 81vh;
+  height: 84vh;
 }
 
 .around{
@@ -12,9 +12,13 @@
   margin: 0;
 }
 
+.top-title{
+  font-size: 4vw;
+}
+
 .isometric{
   width: 100%;
-  margin: 0 auto;
+  position: relative;
 }
 
 .icon{
@@ -22,10 +26,6 @@
   transform: scale(1.1, 1.1);
   transition: all 0.3s ease 0s;
   }
-}
-
-.icon-wrapper{
-  position: relative;
 }
 
 #sunny-icon0{
@@ -166,8 +166,3 @@
 .calendar-title{
   font-size: 2rem;
 }
-
-@media screen and (max-width: 576px) {
-
-}
-
