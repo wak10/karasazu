@@ -1,10 +1,10 @@
 <%= form_with model: @grow_plant, url: grow_plants_path, local: true do |f| %>
   <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
-    <div class="m-2">
+    <div class="text-center m-2">
       <%= attachment_image_tag @plant, :image, :fill, 200, 200 %></br >
       <%= f.attachment_field :image %>
     </div>
-    <div class="align-items-center justify-content-center ml-5">
+    <div class="align-items-center justify-content-center">
       <h2>育成植物選択</h2>
       <table class="table table-border">
         <tr>

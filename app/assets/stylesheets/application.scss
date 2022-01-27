@@ -52,7 +52,7 @@ header {
   white-space: nowrap;
 }
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 577px) {
 
   header {
       ul {
@@ -90,7 +90,7 @@ header {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 576px) {
   header{
     a{
       width: 80%;
@@ -99,4 +99,13 @@ header {
       }
     }
   }
+
+  .none{
+    display: none;
+  }
+
+  .picture{
+    width: 60%;
+  }
+
 }

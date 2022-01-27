@@ -4,11 +4,11 @@
 
 .side {
   padding: 15px 0;
-  height: 80vh;
+  height: 81vh;
 }
 
 .around{
-  background-color: #bdbd8f;
+  background-color: rgba(25, 77, 25, 0.3);
   margin: 0;
 }
 
@@ -165,5 +165,9 @@
 
 .calendar-title{
   font-size: 2rem;
+}
+
+@media screen and (max-width: 576px) {
+
 }
 

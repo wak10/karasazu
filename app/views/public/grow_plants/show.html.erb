@@ -1,87 +1,82 @@
 <div class="container">
-    <div class="d-flex align-items-center justify-content-center mt-5">
-      <div class="m-2"><%= attachment_image_tag @grow_plant, :image, :fill, 200, 200 %></div>
-      <div class="align-items-center justify-content-center ml-5">
-        <table class="table table-border">
-          <tr>
-            <td class="nowrap"><h2>育成植物詳細</h2></td>
-            <td class="text-right"><%= link_to "編集ページへ", edit_grow_plant_path(@grow_plant), class: "btn btn-outline-secondary" %></td>
-          </tr>
-          <tr>
-            <td>植物名</td>
-            <td><%= @grow_plant.plant.plant_name %></td>
-          </tr>
-          <tr>
-            <td>愛称</td>
-            <td><%= @grow_plant.nick_name %></td>
-          </tr>
-          <tr>
-            <td>水やり水量</td>
-            <td><%= @grow_plant.plant.amount %></td>
-          </tr>
-          <tr>
-            <td>水やり頻度</td>
-            <td><%= @grow_plant.plant.frequency %>日に1回程度</td>
-          </tr>
-          <tr>
-            <td>育成環境</td>
-            <td>
-              <%= @grow_plant.place %></br >
-              <span class="text-muted">推奨環境は｢<%= @grow_plant.plant.recommend_place %>｣です</span>
-            </td>
-          </tr>
-          <tr>
-            <td class="nowrap">育成アドバイス</td>
-            <td><%= @grow_plant.plant.advice %></td>
-          </tr>
-        <% @grow_plant.logs.last(1).each do |last_log| %>
-          <tr>
-            <td>前回水やり日</td>
-            <td><%= l last_log.created_at %></td>
-          </tr>
-          <tr>
-            <td>次回水やり日</td>
-            <td><%= l last_log.created_at + @frequency.days %></td>
-          </tr>
-        <% end %>
-          <tr>
-            <td>育成開始日</td>
-            <td><%= l @grow_plant.created_at %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-               <div class="d-flex mt-2">
-                <%= form_with model: @log, url: complete_path, local: true do |f| %>
-                  <%= f.hidden_field :grow_plant_id, value: @grow_plant.id %>
-                  <%= f.hidden_field :user_id, value: current_user.id %>
-                  <%= f.submit "水やり完了!!!", class: "btn btn-outline-primary btn-lg mr-5" %>
-                <% end %>
-                <%= link_to "枯れてしまった…", grow_plant_path(@grow_plant), data: { confirm: '育成リストから削除しますか？' }, method: :delete, class: "btn btn-outline-danger btn-lg ml-5" %>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
-
-        </table>
-      </div>
+    <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
+    <div class="container text-center m-2"><%= attachment_image_tag @grow_plant, :image, :fill, 200, 200 %></div>
+    <div class="align-items-center justify-content-center w-100">
+      <table class="container table table-border w-100">
+        <tr>
+          <td class="nowrap"><h2 class="none">育成植物詳細</h2></td>
+          <td class="text-right"><%= link_to "編集ページへ", edit_grow_plant_path(@grow_plant), class: "btn btn-outline-secondary" %></td>
+        </tr>
+        <tr>
+          <td>植物名</td>
+          <td><%= @grow_plant.plant.plant_name %></td>
+        </tr>
+        <tr>
+          <td>愛称</td>
+          <td><%= @grow_plant.nick_name %></td>
+        </tr>
+        <tr>
+          <td>水やり水量</td>
+          <td><%= @grow_plant.plant.amount %></td>
+        </tr>
+        <tr>
+          <td>水やり頻度</td>
+          <td><%= @grow_plant.plant.frequency %>日に1回程度</td>
+        </tr>
+        <tr>
+          <td>育成環境</td>
+          <td>
+            <%= @grow_plant.place %></br >
+            <span class="text-muted">推奨環境は｢<%= @grow_plant.plant.recommend_place %>｣です</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="nowrap">育成アドバイス</td>
+          <td><%= @grow_plant.plant.advice %></td>
+        </tr>
+      <% @grow_plant.logs.last(1).each do |last_log| %>
+        <tr>
+          <td>前回水やり日</td>
+          <td><%= l last_log.created_at %></td>
+        </tr>
+        <tr>
+          <td>次回水やり日</td>
+          <td><%= l last_log.created_at + @frequency.days %></td>
+        </tr>
+      <% end %>
+        <tr>
+          <td>育成開始日</td>
+          <td><%= l @grow_plant.created_at %></td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <%= form_with model: @log, url: complete_path, local: true do |f| %>
+              <%= f.hidden_field :grow_plant_id, value: @grow_plant.id %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.submit "水やり完了!!!", class: "btn btn-outline-primary" %>
+            <% end %>
+          </td>
+          <td class="text-center">
+            <%= link_to "枯れてしまった…", grow_plant_path(@grow_plant), data: { confirm: '育成リストから削除しますか？' }, method: :delete, class: "btn btn-outline-danger nowrap" %>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
+  </div>
 </div>
-
-
-
-    <div class="container mt-5">
-      <h2 class="mt-5 border-bottom w-25 text-center">水やりログ</h2>
-      <%= month_calendar events: @logs do |date, logs| %>
-  		  <%= date.day %>
-  		  <% logs.each do |logs| %>
-          <div>
-  		      <i class="fas fa-tint text-primary"></i>
-  		      <span><%= logs.created_at.strftime('%H:%M') %></span>
-          </div>
-  		  <% end %>
-  		<% end %>
-  	</div>
+<div class="container mt-5">
+  <h2 class="mt-5 border-bottom">水やりログ</h2>
+  <%= month_calendar events: @logs do |date, logs| %>
+	  <%= date.day %>
+	  <% logs.each do |logs| %>
+      <div>
+	      <i class="fas fa-tint text-primary"></i>
+	      <span><%= logs.created_at.strftime('%H:%M') %></span>
+      </div>
+	  <% end %>
+	<% end %>
+</div>
