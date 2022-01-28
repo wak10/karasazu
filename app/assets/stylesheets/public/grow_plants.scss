@@ -1,28 +1,24 @@
-// Place all the styles related to the public/grow_plants controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.nowrap {
-  white-space: nowrap;
-}
-
 .above {
   padding: 15px 0;
 }
 
 .side {
   padding: 15px 0;
-  height: 80vh;
+  height: 84vh;
 }
 
 .around{
-  background-color: #bdbd8f;
+  background-color: rgba(25, 77, 25, 0.3);
   margin: 0;
+}
+
+.top-title{
+  font-size: 3vw;
 }
 
 .isometric{
   width: 100%;
-  margin: 0 auto;
+  position: relative;
 }
 
 .icon{
@@ -30,10 +26,6 @@
   transform: scale(1.1, 1.1);
   transition: all 0.3s ease 0s;
   }
-}
-
-.icon-wrapper{
-  position: relative;
 }
 
 #sunny-icon0{
@@ -174,4 +166,3 @@
 .calendar-title{
   font-size: 2rem;
 }
-

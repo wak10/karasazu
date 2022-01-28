@@ -1,18 +1,18 @@
 <%= form_with model: @user, url: users_path, local:true do |f| %>
-  <div class="d-flex align-items-center justify-content-center mt-5">
-    <div>
-  	  <%= attachment_image_tag @user, :image, :fill, 200, 200 , fallback: "icon.jpeg" %></br >
-  	  <%= f.attachment_field :image %>
+   <div class="d-flex align-items-center justify-content-center flex-wrap mt-5 wrapper">
+    <div class="text-center m-2">
+	    <%= attachment_image_tag @user, :image, :fill, 200, 200 , fallback: "icon.jpeg", class:"logo" %></br >
+	    <%= f.attachment_field :image %>
     </div>
-	  <div class="align-items-center justify-content-center">
-		  <h2>マイページ編集</h2>
+    <div class="align-items-center justify-content-center">
+	    <h2>マイページ編集</h2>
 		  <table class="table table-border">
 				<tr>
       		<td><%= f.label :name, "ユーザー名:" %></td>
       		<td><%= f.text_field :name %></td>
      		</tr>
 				<tr>
-      		<td><%= f.label :email, "メールアドレス:" %></td>
+      		<td class="nowrap"><%= f.label :email, "メールアドレス:" %></td>
       		<td><%= f.text_field :email %></td>
      		</tr>
 				<tr>
@@ -20,6 +20,6 @@
       		<td class="text-right"><%= f.submit '更新する', class: "btn btn-outline-primary" %></td>
      		</tr>
 			</table>
-	  </div>
+    </div>
   </div>
 <% end %>
