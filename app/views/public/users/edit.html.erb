@@ -1,10 +1,10 @@
-<div class="container mt-5 d-flex align-items-center justify-content-center wrapper">
-  <%= form_with model: @user, url: users_path, local:true do |f| %>
-    <div class="d-flex flex-wrap justify-content-center">
-	    <%= attachment_image_tag @user, :image, :fill, 200, 200 , fallback: "icon.jpeg", class:"logo" %>
+<%= form_with model: @user, url: users_path, local:true do |f| %>
+   <div class="d-flex align-items-center justify-content-center flex-wrap mt-5 wrapper">
+    <div class="text-center m-2">
+	    <%= attachment_image_tag @user, :image, :fill, 200, 200 , fallback: "icon.jpeg", class:"logo" %></br >
 	    <%= f.attachment_field :image %>
     </div>
-    <div class="align-items-center justify-content-center mx-3">
+    <div class="align-items-center justify-content-center">
 	    <h2>マイページ編集</h2>
 		  <table class="table table-border">
 				<tr>
@@ -21,5 +21,5 @@
      		</tr>
 			</table>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
