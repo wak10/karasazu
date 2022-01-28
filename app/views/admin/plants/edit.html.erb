@@ -1,5 +1,5 @@
 <%= form_with model: @plant, url: admin_plant_path,method: :patch, local:true do |f| %>
-	<div class="d-flex align-items-center justify-content-center flex-wrap">
+  <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
     <div class="m-2">
   	  <%= attachment_image_tag @plant, :image, :fill, 200, 200, fallback: "karasazu_logo.jpg" %></br >
  	  	<%= f.attachment_field :image %>
@@ -29,7 +29,7 @@
         </tr>
         <tr>
           <td><%= f.submit '更新する', class: "btn btn-outline-primary" %></td>
-          <td></td>
+          <td class="text-right"><%= link_to "削除する",  admin_plant_path(@plant), data: { confirm: '本当に削除しますか？' }, method: :delete, class: "btn btn-outline-danger" %></td>
         </tr>
       </table>
     </div>

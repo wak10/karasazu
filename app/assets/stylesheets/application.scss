@@ -14,6 +14,7 @@
  *= require_tree .
  *= require_self
  */
+
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
@@ -27,113 +28,83 @@
   font-family: 'Yusei Magic', sans-serif;
 }
 
-header {
-  width: 100vw;
-  background-color: #8fbc8f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid gray;
-  }
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-
-    ul {
-      display: flex;
-      justify-content: flex-end;
-      margin: auto;
-      p {
-        padding: 10px;
-        margin: 0 auto;
-      }
-      li {
-        list-style: none;
-        margin-left: 30px;
-        a {
-          display: block;
-          width: 110px;
-          padding: 8px 10px;
-          text-align: center;
-          text-decoration: none;
-          color: #333;
-          border:solid 1px;
-          border-radius: 6px;
-        }
-      }
-      li:hover {
-        color: #C0C0C0;
-        a {
-          background-color:  white;
-          color: #8fbc8f;
-          border-radius: 6px;
-        }
-      }
-
-    }
-  }
 
 .image {
   border-radius: 50%;
   border: solid;
   border: 2px solid gray;
-  margin: 20px 0;
+}
+
+header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #8fbc8f;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
 }
 
 .nowrap {
   white-space: nowrap;
 }
 
-.above {
-  padding: 15px 0;
-}
+@media screen and (min-width: 577px) {
 
-.side {
-  padding: 15px 0;
-  height: 80vh;
-}
-.around{
-  background-color: #bdbd8f;
-  margin: 0;
-}
+  header {
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        margin: auto;
+        p {
+          padding: 10px;
+          margin: 0 auto;
+        }
+        li {
+          list-style: none;
+          margin-left: 30px;
+            a {
+              display: block;
+              width: 110px;
+              padding: 8px 10px;
+              text-align: center;
+              text-decoration: none;
+              color: #333;
+              border:solid 1px;
+              border-radius: 6px;
+            }
+        }
+        li:hover {
+          color: #C0C0C0;
+          a {
+            background-color:  #8fbc8f;
+            color: white;
+            border-radius: 6px;
+          }
+        }
+      }
 
-.room {
-  width: 90%;
-  margin: 0 5%;
-}
-
-.icon{
-  .image{
-    margin: 0 auto;
   }
 }
 
-.simple-calendar {
- .day {}
- .wday-0 {
-   background-color: #FA8072;
- }
- .wday-1 {}
- .wday-2 {}
- .wday-3 {}
- .wday-4 {}
- .wday-5 {}
- .wday-6 {
-   background-color:  #87CEEB;
- }
- .today {}
- .past {}
- .future {}
- .start-date {}
- .prev-month {}
- .next-month {}
- .current-month {}
- .has-events {
-   background: #c2ffc2;
- }
-}
+@media screen and (max-width: 576px) {
+  header{
+    a{
+      width: 80%;
+      .logo{
+        width: 90%;
+      }
+    }
+  }
 
-.calendar-title{
-  font-size: 2rem;
+  .none{
+    display: none;
+  }
+
+  .picture{
+    width: 60%;
+  }
+
 }

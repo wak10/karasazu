@@ -30,6 +30,12 @@ class Admin::PlantsController < ApplicationController
     redirect_to admin_plants_path
   end
 
+  def destroy
+    @plant = Plant.find(params[:id])
+    @plant.destroy
+    redirect_to admin_plants_path
+  end
+
   private
 
   def plant_params

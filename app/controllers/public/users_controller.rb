@@ -11,6 +11,7 @@ class Public::UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_paramas)
+      redirect_to action: :show
     else
       render :edit
     end

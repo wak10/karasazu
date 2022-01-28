@@ -3,6 +3,8 @@ class Public::GrowPlantsController < ApplicationController
 
   def top
     @grow_plants = current_user.grow_plants
+    @sunny_place = @grow_plants.where(place: 0)
+    @half_sunny_place = @grow_plants.where(place: 1)
   end
 
   def index

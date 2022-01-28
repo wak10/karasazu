@@ -2,6 +2,7 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d"
+      short: "%m/%d"
 
   date:
     abbr_day_names:

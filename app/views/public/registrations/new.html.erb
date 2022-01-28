@@ -1,6 +1,6 @@
-  <div class="d-flex align-items-center justify-content-center mt-5">
-    <div class="mr-5"><%= image_tag 'karasazu_logo.jpg'%></div>
-    <div class="align-items-center justify-content-center ml-5">
+<div class="container mt-5 d-flex align-items-center justify-content-center wrapper">
+  <%= image_tag 'karasazu_logo.jpg', class:"logo"%>
+  <div class="align-items-center justify-content-center mx-3">
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <h2>新規登録</h2>
       <div class="field">
@@ -26,5 +26,6 @@
         <%= f.submit "新規登録", class: "btn btn-outline-success " %>
       </div>
     <% end %>
-    </div>
   </div>
+</div>
+

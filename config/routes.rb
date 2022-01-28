@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    resources :plants, only: [:index, :new, :create, :update, :edit]
+    resources :plants, except:[:show]
   end
 
   devise_for :admin, skip: [:registrations, :passwords],controllers: {

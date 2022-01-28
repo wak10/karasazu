@@ -1,20 +1,17 @@
 <div class="container mt-5">
-  <div class="d-flex align-items-center">
-  <%= image_tag 'karasazu_logo.jpg'%>
-  <div class="align-items-center justify-content-center ml-5">
-    <h1>カラサズとは</h1>
-    <h5>
-      植物の水やりリマインドするアプリケーションです。</br>
-      事前に管理者が植物の種類ごとに水やりの頻度と量、適正環境と育成のアドバイスを登録します。</br>
-      ユーザーは育成している植物名を選択するだけで、最適な水やり日を通知で受け取ることができます。</br>
-      植物ごとの詳細画面で水やりログのカレンダー･次回水やり予定日･水量･適正環境･育成アドバイスを確認できます。</br>
-    </h5>
-  </div>
+  <div class="d-flex align-items-center wrapper">
+    <%= image_tag 'karasazu_logo.jpg', class:"logo"%>
+    <div class="align-items-center justify-content-center mx-3">
+      <h1 class="my-3">カラサズとは</h1>
+      <h5>
+        植物の水やりリマインドするアプリケーションです。</br>
+        ユーザーは育成している植物名を選択するだけで、最適な水やり日を通知で受け取ることができます。</br>
+        水やりログのカレンダー･次回水やり予定日･水量･適正環境･育成アドバイスを確認し、観葉植物を枯らさずに育成を楽しみましょう。</br>
+      </h5>
+    </div>
   </div>
   <div class="d-flex align-items-center justify-content-center mt-5">
-
-    <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-primary btn-lg mr-5" %>
-    <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-success btn-lg ml-5" %>
-
+    <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-primary btn-lg mx-2" %>
+    <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-success btn-lg mx-2" %>
   </div>
 </div>
