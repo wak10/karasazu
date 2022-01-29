@@ -25,10 +25,11 @@
 水やりの頻度がわからない時。
 
 ## 設計書
-
+- [詳細設計](https://docs.google.com/spreadsheets/d/1KBigbYiPJtwnupR-Zx6_Gs251O5JYQPz/edit?usp=sharing&ouid=100102316075901725576&rtpof=true&sd=true)
+- [ER図](https://drive.google.com/file/d/1-59sJlU8JykLQGQb-cVixynOOkJE_xWb/view?usp=sharing)
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1kCRW2OeS7ySQegIg09vb770Mjza98gOG9-BiSi5G6H0/edit?usp=sharing
+- [チャレンジ要素一覧](https://docs.google.com/spreadsheets/d/1kCRW2OeS7ySQegIg09vb770Mjza98gOG9-BiSi5G6H0/edit#gid=0)
 
 ## 開発環境
 - OS：Linux(CentOS)
