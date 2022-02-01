@@ -4,6 +4,6 @@
   set :output, 'log/cron.log'
 
 
-  every :day, at: "21:55 pm" do
+  every 2.minutes do
     runner "GrowPlant.send_mail"
   end
