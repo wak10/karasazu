@@ -8,6 +8,6 @@
     Time.zone.parse(time).localtime($system_utc_offset)
   end
 
-  every :day, at: "9:16 pm" do
+  every :day, at: "9:21 pm" do
     runner "GrowPlant.send_mail"
   end
