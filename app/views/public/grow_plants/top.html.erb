@@ -93,7 +93,7 @@
             <% end %>
           </div>
           <div class="text-center">
-            <span class="lead"><%= grow_plant.nick_name %></span></br >
+            <span class="lead"><%= grow_plant.nick_name %></span><br />
             <% grow_plant.logs.last(1).each do |last_log| %>
               <% @frequency = grow_plant.plant.frequency %>
               <span>次回水やり日︰<%= l last_log.created_at + @frequency.days, format: :short %></span>

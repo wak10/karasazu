@@ -64,6 +64,7 @@ gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'tzinfo-data'
 
 gem 'devise'
+gem 'devise-i18n'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"

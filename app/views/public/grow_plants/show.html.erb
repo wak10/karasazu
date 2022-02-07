@@ -26,7 +26,7 @@
         <tr>
           <td>育成環境</td>
           <td>
-            <%= @grow_plant.place %></br >
+            <%= @grow_plant.place %><br />
             <span class="text-muted">推奨環境は｢<%= @grow_plant.plant.recommend_place %>｣です</span>
           </td>
         </tr>
@@ -50,7 +50,7 @@
         </tr>
         <tr>
           <td class="text-center">
-            <%= form_with model: @log, url: complete_path, local: true do |f| %>
+            <%= form_with model: @log, url: complete_grow_plant_path, local: true do |f| %>
               <%= f.hidden_field :grow_plant_id, value: @grow_plant.id %>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.submit "水やり完了!!!", class: "btn btn-outline-primary" %>
