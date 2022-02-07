@@ -1,7 +1,7 @@
 <%= form_with model: @user, url: users_path, local:true do |f| %>
    <div class="d-flex align-items-center justify-content-center flex-wrap mt-5 wrapper">
     <div class="text-center m-2">
-	    <%= attachment_image_tag @user, :image, :fill, 200, 200 , fallback: "icon.jpeg", class:"logo" %></br >
+	    <%= attachment_image_tag @user, :image, :fill, 200, 200 , fallback: "icon.jpeg", class:"logo" %><br />
 	    <%= f.attachment_field :image %>
     </div>
     <div class="align-items-center justify-content-center">
