@@ -1,5 +1,13 @@
 class Public::GrowPlantsController < ApplicationController
   before_action :authenticate_user!
+  before_action :correct_post,only: [:show]
+
+  def correct_post
+    @grow_plant = GrowPlant.find(params[:id])
+    unless @grow_plant.user.id == current_user.id
+      redirect_to root_path
+    end
+  end
 
   def top
     @grow_plants = current_user.grow_plants
