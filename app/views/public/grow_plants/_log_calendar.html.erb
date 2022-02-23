@@ -1,0 +1,9 @@
+  <%= month_calendar events: logs do |date, logs| %>
+	  <%= date.day %>
+	  <% logs.each do |logs| %>
+      <div>
+	      <i class="fas fa-tint text-primary"></i>
+	      <span><%= logs.created_at.strftime('%H:%M') %></span>
+      </div>
+	  <% end %>
+	<% end %>
