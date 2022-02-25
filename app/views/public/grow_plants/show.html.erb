@@ -50,7 +50,7 @@
         </tr>
         <tr>
           <td class="text-center">
-            <%= form_with model: @log, url: complete_grow_plant_path, data: {remote: true} do |f| %>
+            <%= form_with model: @log, url: complete_grow_plant_path, remote: true do |f| %>
               <%= f.hidden_field :grow_plant_id, value: @grow_plant.id %>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.submit "水やり完了!!!", class: "btn btn-outline-primary" %>
@@ -68,7 +68,7 @@
     </div>
   </div>
 </div>
-<div class="container mt-5", id="calendar">
+<div class="container mt-5">
   <h2 class="mt-5 border-bottom">水やりログ</h2>
-    <%= render 'log_calendar', logs: @logs %>
+    <%= render 'calendar', logs: @logs, id:"update_calendar" %>
 </div>
