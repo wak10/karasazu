@@ -50,7 +50,7 @@
         </tr>
         <tr>
           <td class="text-center">
-            <%= form_with model: @log, url: complete_grow_plant_path, local: true do |f| %>
+            <%= form_with model: @log, url: complete_grow_plant_path, remote: true do |f| %>
               <%= f.hidden_field :grow_plant_id, value: @grow_plant.id %>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.submit "水やり完了!!!", class: "btn btn-outline-primary" %>
@@ -70,13 +70,7 @@
 </div>
 <div class="container mt-5">
   <h2 class="mt-5 border-bottom">水やりログ</h2>
-  <%= month_calendar events: @logs do |date, logs| %>
-	  <%= date.day %>
-	  <% logs.each do |logs| %>
-      <div>
-	      <i class="fas fa-tint text-primary"></i>
-	      <span><%= logs.created_at.strftime('%H:%M') %></span>
-      </div>
-	  <% end %>
-	<% end %>
+    <div id="calendar">
+      <%= render 'calendar', logs: @logs %>
+    </div>
 </div>
