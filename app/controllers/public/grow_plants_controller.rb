@@ -43,7 +43,8 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def complete
-    @logs = Log.all
+    @grow_plant = GrowPlant.find(params[:id])
+    @logs = @grow_plant.log.all
     @log = Log.new(log_params)
     unless @log.save
       redirect_to action: :show
