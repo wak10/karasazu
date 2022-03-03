@@ -55,7 +55,7 @@
 <div class="container mt-5">
   <h2 class="mt-5 border-bottom">水やりログ</h2>
   <div class="d-flex justify-content-around my-5">
-    <%= form_with model: @log, data: { confirm: '水やりログを記録しますか?' }, url: complete_grow_plant_path, remote: true do |f| %>
+    <%= form_with model: @log, url: complete_grow_plant_path, remote: true do |f| %>
       <%= f.hidden_field :grow_plant_id, value: @grow_plant.id %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.submit "水やり完了!!!", class: "btn btn-outline-primary mx-2" %>
