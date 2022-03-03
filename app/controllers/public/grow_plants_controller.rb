@@ -43,11 +43,18 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def complete
-    @logs = Log.all
     @log = Log.new(log_params)
-    unless @log.save
+    if @log.save
+      @grow_plant = GrowPlant.find(params[:id])
+      @logs = @grow_plant.logs.includes(:grow_plant)
+    else
       redirect_to action: :show
     end
+
+    # unless @log.save
+    #   redirect_to action: :show
+    # end
+
   end
 
   def edit
