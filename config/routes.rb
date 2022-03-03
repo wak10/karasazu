@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   scope module: :public do
     root "homes#about"
     resource :users, only:[:show, :edit, :update]
-    resources :grow_plants, except:[:new] do
+    resources :grow_plants do
       member do
         get "pick"
         post "complete"
+      end
+      collection do
+        post "register"
       end
     end
     get "/top" => "grow_plants#top"

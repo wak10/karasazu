@@ -24,7 +24,7 @@ class Public::GrowPlantsController < ApplicationController
     @grow_plant = GrowPlant.new
   end
 
-  def create
+  def register
     @grow_plant = current_user.grow_plants.new(grow_plant_params)
     @grow_plant.image ||= @grow_plant.plant.image
 
@@ -34,6 +34,14 @@ class Public::GrowPlantsController < ApplicationController
       render :pick
     end
   end
+  
+  def new
+  end
+  
+  def create
+  end
+  
+  
 
   def show
     @grow_plant = GrowPlant.find(params[:id])
