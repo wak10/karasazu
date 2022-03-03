@@ -50,11 +50,6 @@ class Public::GrowPlantsController < ApplicationController
     else
       redirect_to action: :show
     end
-
-    # unless @log.save
-    #   redirect_to action: :show
-    # end
-
   end
 
   def edit
