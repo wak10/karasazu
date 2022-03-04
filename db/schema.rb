@@ -52,6 +52,10 @@ ActiveRecord::Schema.define(version: 2021_12_25_103252) do
     t.string "image_id"
     t.string "nick_name"
     t.integer "place", default: 0, null: false
+    t.string "plant_name"
+    t.integer "frequency"
+    t.string "amount"
+    t.string "advice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

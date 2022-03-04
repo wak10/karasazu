@@ -1,6 +1,6 @@
 class GrowPlant < ApplicationRecord
   belongs_to :user
-  belongs_to :plant
+  belongs_to :plant, optional: true
   has_many :logs, dependent: :destroy
   attachment :image
 
@@ -26,17 +26,3 @@ class GrowPlant < ApplicationRecord
   end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-

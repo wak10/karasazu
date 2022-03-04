@@ -34,18 +34,30 @@ class Public::GrowPlantsController < ApplicationController
       render :pick
     end
   end
-  
+
   def new
+    @custom = GrowPlant.new
   end
-  
+
   def create
+    @custom = current_user.grow_plants.new(grow_plant_params)
+    if @custom.save
+      redirect_to top_path
+    else
+      render :new
+    end
   end
-  
-  
+
 
   def show
     @grow_plant = GrowPlant.find(params[:id])
-    @frequency = @grow_plant.plant.frequency
+
+    # @frequency = @grow_plant.plant.frequency. if @grow_plant.plant.exists?
+    # if @grow_plant.plant.frequency
+
+    # else
+      @frequency = @grow_plant.frequency
+    # end
     @log = Log.new
     @logs = @grow_plant.logs.includes(:grow_plant)
   end
@@ -86,7 +98,7 @@ class Public::GrowPlantsController < ApplicationController
   end
 
   def grow_plant_params
-    params.require(:grow_plant).permit( :plant_id, :user_id, :nick_name, :place, :image)
+    params.require(:grow_plant).permit( :plant_id, :user_id, :nick_name, :place, :image, :plant_name, :frequency, :amount, :advice)
   end
 
   def log_params

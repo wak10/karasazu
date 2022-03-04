@@ -6,6 +6,11 @@ class CreateGrowPlants < ActiveRecord::Migration[5.2]
       t.string :image_id
       t.string :nick_name
       t.integer :place, null: false, default: 0
+
+      t.string :plant_name
+      t.integer :frequency
+      t.string :amount
+      t.string :advice
       t.timestamps
     end
   end
