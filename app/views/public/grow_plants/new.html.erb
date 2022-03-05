@@ -40,3 +40,12 @@
   </div>
   <%= f.hidden_field :user_id, value: current_user.id %>
 <% end %>
+<div class="text-center text-danger">
+  <% if @custom.errors.any? %>
+    <ul>
+      <% @custom.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

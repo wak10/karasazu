@@ -57,5 +57,14 @@
     </div>
   </div>
 <% end %>
+<div class="text-center text-danger">
+  <% if @grow_plant.errors.any? %>
+    <ul>
+      <% @grow_plant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
 

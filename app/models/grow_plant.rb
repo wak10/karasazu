@@ -25,6 +25,6 @@ class GrowPlant < ApplicationRecord
     end
   end
 
-  validates :frequency, presence: true
-  validates :image, presence: true
+  validates :frequency, presence: { message: "水やり頻度を入力してください" }
+  validates :image, presence: { message: "画像を登録してください" }
 end
