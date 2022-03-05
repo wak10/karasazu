@@ -25,4 +25,6 @@ class GrowPlant < ApplicationRecord
     end
   end
 
+  validates :frequency, presence: true
+  validates :image, presence: true
 end

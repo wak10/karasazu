@@ -30,5 +30,6 @@
     </div>
   </div>
   <%= f.hidden_field :plant_id, value: @plant.id %>
+  <%= f.hidden_field :frequency, value: @plant.frequency %>
   <%= f.hidden_field :user_id, value: current_user.id %>
 <% end %>
