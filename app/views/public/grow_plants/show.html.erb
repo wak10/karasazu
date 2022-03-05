@@ -9,7 +9,7 @@
         </tr>
         <tr>
           <td>植物名</td>
-          <td><%= @grow_plant.plant.plant_name %></td>
+          <td><%= @info.plant_name %></td>
         </tr>
         <tr>
           <td>愛称</td>
@@ -17,22 +17,24 @@
         </tr>
         <tr>
           <td>水やり水量</td>
-          <td><%= @grow_plant.plant.amount %></td>
+          <td><%= @info.amount %></td>
         </tr>
         <tr>
           <td>水やり頻度</td>
-          <td><%= @grow_plant.plant.frequency %>日に1回程度</td>
+          <td><%= @info.frequency %>日に1回程度</td>
         </tr>
         <tr>
           <td>育成環境</td>
           <td>
             <%= @grow_plant.place %><br />
-            <span class="text-muted">推奨環境は｢<%= @grow_plant.plant.recommend_place %>｣です</span>
+            <% @grow_plant.plant.present? do %>
+              <span class="text-muted">推奨環境は｢<%= @info.recommend_place %>｣です</span>
+            <% end %>
           </td>
         </tr>
         <tr>
           <td class="nowrap">育成アドバイス</td>
-          <td><%= @grow_plant.plant.advice %></td>
+          <td><%= @info.advice %></td>
         </tr>
       <% @grow_plant.logs.last(1).each do |last_log| %>
         <tr>
