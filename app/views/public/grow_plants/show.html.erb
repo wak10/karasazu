@@ -2,58 +2,59 @@
     <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
     <div class="container text-center m-2"><%= attachment_image_tag @grow_plant, :image, :fill, 200, 200 %></div>
     <div class="align-items-center justify-content-center w-100">
-      <table class="container table table-border w-100">
-        <tr>
-          <td class="nowrap"><h2 class="none">育成植物詳細</h2></td>
-          <td class="text-right"><%= link_to "編集ページへ", edit_grow_plant_path(@grow_plant), class: "btn btn-outline-secondary" %></td>
-        </tr>
-        <tr>
-          <td>植物名</td>
-          <td><%= @info.plant_name %></td>
-        </tr>
-        <tr>
-          <td>愛称</td>
-          <td><%= @grow_plant.nick_name %></td>
-        </tr>
-        <tr>
-          <td>水やり水量</td>
-          <td><%= @info.amount %></td>
-        </tr>
-        <tr>
-          <td>水やり頻度</td>
-          <td><%= @info.frequency %>日に1回程度</td>
-        </tr>
-        <tr>
-          <td>育成環境</td>
-          <td>
-            <%= @grow_plant.place %><br />
-            <% @grow_plant.plant.present? do %>
-              <span class="text-muted">推奨環境は｢<%= @info.recommend_place %>｣です</span>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <td class="nowrap">育成アドバイス</td>
-          <td><%= @info.advice %></td>
-        </tr>
-      <% @grow_plant.logs.last(1).each do |last_log| %>
-        <tr>
-          <td>前回水やり日</td>
-          <td><%= l last_log.created_at %></td>
-        </tr>
-        <tr>
-          <td>次回水やり日</td>
-          <td><%= l last_log.created_at + @frequency.days %></td>
-        </tr>
-      <% end %>
-        <tr>
-          <td>育成開始日</td>
-          <td><%= l @grow_plant.created_at %></td>
-        </tr>
+      <table class="table table-border">
+          <tr>
+            <td class="nowrap"><h2 class="none">育成植物詳細</h2></td>
+            <td class="text-right"><%= link_to "編集ページへ", edit_grow_plant_path(@grow_plant), class: "btn btn-outline-secondary" %></td>
+          </tr>
+          <tr>
+            <td>植物名</td>
+            <td><%= @info.plant_name %></td>
+          </tr>
+          <tr>
+            <td>愛称</td>
+            <td><%= @grow_plant.nick_name %></td>
+          </tr>
+          <tr>
+            <td>水やり水量</td>
+            <td><%= @info.amount %></td>
+          </tr>
+          <tr>
+            <td>水やり頻度</td>
+            <td><%= @info.frequency %>日に1回程度</td>
+          </tr>
+          <tr>
+            <td>育成環境</td>
+            <td>
+              <%= @grow_plant.place %><br />
+                <% if @grow_plant.plant.present? %>
+                  <span class="text-muted">推奨環境は｢<%= @info.recommend_place %>｣です</span>
+                <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="nowrap">育成アドバイス</td>
+            <td><%= @info.advice %></td>
+          </tr>
+          <% @grow_plant.logs.last(1).each do |last_log| %>
+            <tr>
+              <td>前回水やり日</td>
+              <td><%= l last_log.created_at %></td>
+            </tr>
+            <tr>
+              <td>次回水やり日</td>
+              <td><%= l last_log.created_at + @frequency.days %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td>育成開始日</td>
+            <td><%= l @grow_plant.created_at %></td>
+          </tr>
       </table>
     </div>
   </div>
 </div>
+
 <div class="container mt-5">
   <h2 class="mt-5 border-bottom">水やりログ</h2>
   <div class="d-flex justify-content-around my-5">
