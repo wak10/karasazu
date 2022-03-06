@@ -13,16 +13,6 @@ class Public::GrowPlantsController < ApplicationController
     @grow_plants = current_user.grow_plants
     @sunny_place = @grow_plants.where(place: 0)
     @half_sunny_place = @grow_plants.where(place: 1)
-
-    @grow_plants.each do |grow_plant|
-      if grow_plant.plant.present?
-        @frequency = grow_plant.plant.frequency
-      else
-        @frequency = grow_plant.frequency
-      end
-
-    end
-
   end
 
   def index
@@ -69,7 +59,6 @@ class Public::GrowPlantsController < ApplicationController
       @info = @grow_plant
       @frequency = @info.frequency
     end
-
     @log = Log.new
     @logs = @grow_plant.logs.includes(:grow_plant)
   end
