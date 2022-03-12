@@ -1,35 +1,37 @@
-<%= form_with model: @grow_plant, url: register_grow_plants_path, local: true do |f| %>
-  <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
-    <div class="text-center m-2">
-      <%= attachment_image_tag @plant, :image, :fill, 200, 200 %><br />
-      <%= f.attachment_field :image %>
+<div class="container">
+  <%= form_with model: @grow_plant, url: register_grow_plants_path, local: true do |f| %>
+    <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
+      <div class="container text-center m-2">
+        <%= attachment_image_tag @plant, :image, :fill, 200, 200 %><br />
+        <%= f.attachment_field :image %>
+      </div>
+      <div class="align-items-center justify-content-center w-100">
+        <h2 class="none">育成植物選択</h2>
+        <table class="table table-border">
+          <tr>
+            <td>植物名</td>
+            <td><%= @plant.plant_name %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :nick_name, "愛称" %></td>
+            <td><%= f.text_field :nick_name %></td>
+          </tr>
+          <tr>
+            <td class="nowrap"><%= f.label :place, "育成環境" %></td>
+            <td>
+              <%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%>
+              <span class="text-muted">推奨環境は｢<%= @plant.recommend_place %>｣です</span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="text-right"><%= f.submit "育成中へ登録する", class: "btn btn-outline-primary" %></td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div class="align-items-center justify-content-center">
-      <h2>育成植物選択</h2>
-      <table class="table table-border">
-        <tr>
-          <td>植物名</td>
-          <td><%= @plant.plant_name %></td>
-        </tr>
-        <tr>
-          <td><%= f.label :nick_name, "愛称" %></td>
-          <td><%= f.text_field :nick_name %></td>
-        </tr>
-        <tr>
-          <td class="nowrap"><%= f.label :place, "育成環境" %></td>
-          <td>
-            <%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%>
-            <span class="text-muted">推奨環境は｢<%= @plant.recommend_place %>｣です</span>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="text-right"><%= f.submit "育成中へ登録する", class: "btn btn-outline-primary" %></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <%= f.hidden_field :plant_id, value: @plant.id %>
-  <%= f.hidden_field :frequency, value: @plant.frequency %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-<% end %>
+    <%= f.hidden_field :plant_id, value: @plant.id %>
+    <%= f.hidden_field :frequency, value: @plant.frequency %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  <% end %>
+</div>

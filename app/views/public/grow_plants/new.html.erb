@@ -1,45 +1,47 @@
-<%= form_with model: @custom, url: grow_plants_path, local:true do |f| %>
-  <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
-  	<div class="m-2">
-  		<div><%= attachment_image_tag @custom, :image, :fill, 200, 200 , fallback: "karasazu_logo.jpg" %></div>
-  		<div><%= f.attachment_field :image %></div>
-  	</div>
-    <div class="align-items-center justify-content-center m-2">
-	    <h2>カスタム植物追加</h2>
-		  <table class="table table-border">
-	     <tr>
-          <td><%= f.label :plant_name, "植物名" %></td>
-          <td><%= f.text_field :plant_name %></td>
-        </tr>
-	      <tr>
-          <td><%= f.label :nick_name, "愛称" %></td>
-          <td><%= f.text_field :nick_name %></td>
-        </tr>
-        <tr>
-          <td><%= f.label :frequency, "水やり頻度" %></td>
-          <td><%= f.text_field :frequency %>日ごと</td>
-        </tr>
-        <tr>
-          <td><%= f.label :amount, "水量" %></td>
-          <td><%= f.text_field :amount %></td>
-        </tr>
-        <tr>
-          <td><%= f.label :place, "育成環境" %></td>
-          <td><%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%></td>
-        </tr>
-        <tr>
-          <td><%= f.label :advice, "育成ポイント" %></td>
-          <td><%= f.text_area :advice %></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><%= f.submit '登録する', class: "btn btn-outline-primary" %></td>
-        </tr>
-      </table>
+<div class="container">
+  <%= form_with model: @custom, url: grow_plants_path, local:true do |f| %>
+    <div class="d-flex align-items-center justify-content-center flex-wrap mt-5">
+    	<div class="container text-center m-2">
+    		<div><%= attachment_image_tag @custom, :image, :fill, size:"200x200" , fallback: "karasazu_logo.jpg" %></div>
+    		<div><%= f.attachment_field :image %></div>
+    	</div>
+      <div class="align-items-center justify-content-center w-100">
+  	    <h2 class="none">カスタム植物追加</h2>
+  		  <table class="table table-border">
+  	     <tr>
+            <td><%= f.label :plant_name, "植物名" %></td>
+            <td><%= f.text_field :plant_name %></td>
+          </tr>
+  	      <tr>
+            <td><%= f.label :nick_name, "愛称" %></td>
+            <td><%= f.text_field :nick_name %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :frequency, "水やり頻度" %></td>
+            <td><%= f.text_field :frequency %>日ごと</td>
+          </tr>
+          <tr>
+            <td><%= f.label :amount, "水量" %></td>
+            <td><%= f.text_field :amount %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :place, "育成環境" %></td>
+            <td><%= f.select :place, GrowPlant.places.keys.to_a, {}, class: 'form-control'%></td>
+          </tr>
+          <tr>
+            <td class="nowrap"><%= f.label :advice, "育成ポイント" %></td>
+            <td><%= f.text_area :advice %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="text-right"><%= f.submit '登録する', class: "btn btn-outline-primary" %></td>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-<% end %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  <% end %>
+</div>
 
 <div class="text-center text-danger">
   <% if @custom.errors.any? %>
