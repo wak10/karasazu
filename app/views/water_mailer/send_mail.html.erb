@@ -15,6 +15,7 @@
     <p>サイトへは<%= link_to "こちら", @url %>からアクセスできます</p>
   <hr />
 
+<% if @grow_plant.plant.present? %>
   <table>
     <tr>
       <td>植物名:</td>
@@ -37,6 +38,7 @@
       <td><%= @grow_plant.plant.advice %></td>
       </tr>
   </table>
+<% end %>
   <%= image_tag attachments['logo_top.png'].url %>
 </body>
 </html>
