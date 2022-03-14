@@ -31,6 +31,7 @@ class Public::GrowPlantsController < ApplicationController
     if @grow_plant.save
       redirect_to  top_path
     else
+      @plant = @grow_plant.plant
       render :pick
     end
   end
