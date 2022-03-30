@@ -5,12 +5,12 @@
     		<div><%= attachment_image_tag @custom, :image, :fill, size:"200x200" , fallback: "karasazu_logo.jpg" %></div>
     		<div><%= f.attachment_field :image %></div>
     	</div>
-      <div class="align-items-center justify-content-center mw-100">
+      <div class="align-items-center justify-content-center container">
   	    <h2 class="none">カスタム植物追加</h2>
-  		  <table class="table table-border mw-100">
+  		  <table class="table table-border container">
   	     <tr>
             <td><%= f.label :plant_name, "植物名" %></td>
-            <td class="col"><%= f.text_field :plant_name %></td>
+            <td><%= f.text_field :plant_name %></td>
           </tr>
   	      <tr>
             <td><%= f.label :nick_name, "愛称" %></td>
