@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root "homes#about"
+    get "/version" => "homes#version"
     resource :users, only:[:show, :edit, :update]
     resources :grow_plants do
       member do
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
       end
     end
     get "/top" => "grow_plants#top"
+
   end
 
   devise_for :users, skip: [:passwords],controllers: {
