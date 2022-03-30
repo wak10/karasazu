@@ -5,7 +5,7 @@
         <%= attachment_image_tag @grow_plant, :image, :fill, 200, 200 %><br />
         <%= f.attachment_field :image %>
       </div>
-      <div class="align-items-center justify-content-center">
+      <div class="align-items-center justify-content-center w-100">
         <h2 class="none">育成植物編集</h2>
         <table class="table table-border w-100">
           <% if @grow_plant.plant.present? %>
