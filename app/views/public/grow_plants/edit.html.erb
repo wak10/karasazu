@@ -5,13 +5,13 @@
         <%= attachment_image_tag @grow_plant, :image, :fill, 200, 200 %><br />
         <%= f.attachment_field :image %>
       </div>
-      <div class="align-items-center justify-content-center w-100">
+      <div class="align-items-center justify-content-center mw-100">
         <h2 class="none">育成植物編集</h2>
-        <table class="table table-border w-100">
+        <table class="table table-border mw-100">
           <% if @grow_plant.plant.present? %>
             <tr>
               <td>植物名</td>
-              <td><%= @grow_plant.plant.plant_name %></td>
+              <td class="col"><%= @grow_plant.plant.plant_name %></td>
             </tr>
             <tr>
               <td><%= f.label :nick_name, "愛称" %></td>
@@ -27,7 +27,7 @@
           <% else %>
             <tr>
               <td><%= f.label :plant_name, "植物名" %></td>
-              <td><%= f.text_field :plant_name %></td>
+              <td class="col"><%= f.text_field :plant_name %></td>
             </tr>
     	      <tr>
               <td><%= f.label :nick_name, "愛称" %></td>
