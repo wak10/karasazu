@@ -5,9 +5,9 @@
         <%= attachment_image_tag @plant, :image, :fill, 200, 200 %><br />
         <%= f.attachment_field :image %>
       </div>
-      <div class="align-items-center justify-content-center container">
+      <div class="align-items-center justify-content-center alt-table-responsive container">
         <h2 class="none">育成植物選択</h2>
-        <table class="table table-border container">
+        <table class="table table-border">
           <tr>
             <td>植物名</td>
             <td><%= @plant.plant_name %></td>
