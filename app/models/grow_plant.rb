@@ -22,7 +22,6 @@ class GrowPlant < ApplicationRecord
         if @next_log <= @today
           @grow_plant = grow_plant
           WaterMailer.send_mail(@grow_plant).deliver
-        else
         end
       end
     end
