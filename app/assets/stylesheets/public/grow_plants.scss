@@ -180,7 +180,7 @@
 @media screen and (max-width: 576px) {
   .alt-table-responsive {
       .table{
-        width: 80%;
+        max-width: 80%;
       }
   }
 }
