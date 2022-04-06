@@ -7,7 +7,7 @@ class GrowPlant < ApplicationRecord
   enum place:{ 日向:0, 半日陰:1 }
 
 
-  def send_mail
+  def self.send_mail
     @grow_plants = GrowPlant.all
     @grow_plants.find_each do |grow_plant|
       if grow_plant.plant.present?
@@ -22,6 +22,9 @@ class GrowPlant < ApplicationRecord
         if @next_log <= @today
           @grow_plant = grow_plant
           WaterMailer.send_mail(@grow_plant).deliver
+          p "send_mail"
+        else
+          p "false"
         end
       end
     end
