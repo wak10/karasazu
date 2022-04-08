@@ -12,16 +12,28 @@ class GrowPlant < ApplicationRecord
     @grow_plants.find_each do |grow_plant|
       if grow_plant.plant.present?
         @frequency = grow_plant.plant.frequency
+        grow_plant.logs.last(1).each do |last_log|
+          @next_log = last_log.created_at.to_date + @frequency.days
+          @today = Date.today
+          if @next_log <= @today
+            WaterMailer.send_mail(grow_plant).deliver
+            p "send_mail"
+          else
+            p "false"
+          end
+        end
+
       else
         @frequency = grow_plant.frequency
-      end
-
-      grow_plant.logs.last(1).each do |last_log|
-        @next_log = last_log.created_at.to_date + @frequency.days
-        @today = Date.today
-        if @next_log <= @today
-          @grow_plant = grow_plant
-          WaterMailer.send_mail(@grow_plant).deliver
+        grow_plant.logs.last(1).each do |last_log|
+          @next_log = last_log.created_at.to_date + @frequency.days
+          @today = Date.today
+          if @next_log <= @today
+            WaterMailer.send_mail(grow_plant).deliver
+            p "send_mail"
+          else
+            p "false"
+          end
         end
       end
     end
