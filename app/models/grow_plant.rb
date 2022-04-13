@@ -22,7 +22,6 @@ class GrowPlant < ApplicationRecord
             p "false"
           end
         end
-
       else
         @frequency = grow_plant.frequency
         grow_plant.logs.last(1).each do |last_log|
