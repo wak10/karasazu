@@ -17,23 +17,21 @@ class GrowPlant < ApplicationRecord
           @today = Date.today
           if @next_log <= @today
             WaterMailer.send_mail(grow_plant).deliver
-            p "send_mail"
           else
-            p "false"
           end
         end
       else
-        @frequency = grow_plant.frequency
-        grow_plant.logs.last(1).each do |last_log|
-          @next_log = last_log.created_at.to_date + @frequency.days
-          @today = Date.today
-          if @next_log <= @today
-            WaterMailer.send_mail(grow_plant).deliver
-            p "send_mail"
-          else
-            p "false"
-          end
-        end
+        # @frequency = grow_plant.frequency
+        # grow_plant.logs.last(1).each do |last_log|
+        #   @next_log = last_log.created_at.to_date + @frequency.days
+        #   @today = Date.today
+        #   if @next_log <= @today
+        #     WaterMailer.send_mail(grow_plant).deliver
+        #     p "send_mail"
+        #   else
+        #     p "false"
+        #   end
+        # end
       end
     end
   end
